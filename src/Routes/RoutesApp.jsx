@@ -14,11 +14,11 @@ const RoutesApp = () => {
   return (
     <>
        <Navbar/>
-      <Routes>
+      <Routes> 
  
         
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<Home />} />
+         <Route path="/" element={<Home />} />
         <Route path="/AboutUs" element={<App />} />
         <Route path="/OurProducts" element={<OurProducts />} />
         <Route path="/Reviews" element={<Reviews />} />
@@ -32,7 +32,6 @@ const RoutesApp = () => {
       <Footer/>
       <TopButton/>
       <WhatsAppButton/>
-
 
     </>
   );

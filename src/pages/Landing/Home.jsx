@@ -7,6 +7,7 @@ import Chooseamems from "../../Component/WhyChooseAmems/Chooseamems";
 import Statistics from "../../Component/Statistics/Statistics";
 import Testimonials from "../../Component/Testimonials/Testimonials";
 import CallToAction from "../../Component/CallToAction/CallToAction";
+import Services from "../../Component/Services/Services";
 
 
 const Home = () => {
