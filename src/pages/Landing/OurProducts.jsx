@@ -64,7 +64,7 @@ const OurProducts = () => {
     <div>
       <section className="mt-[120px] px-8">
         <div className="container mx-auto">
-          <div className="bg-blue-100 rounded-full py-8 mb-16 text-center">
+          <div className="bg-blue-100 rounded-full py-[80px] mb-16 text-center">
             <h1 className="text-4xl font-bold text-gray-800">Our Products</h1>
           </div>
         </div>
