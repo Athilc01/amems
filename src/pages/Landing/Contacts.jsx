@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Send, Mail, Phone, MapPin, ChevronDown } from "lucide-react";
+import { Send, ChevronDown } from "lucide-react";
+import ContactForm from "../../Component/ContactForm/ContactForm";
 
 const Contacts = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
@@ -8,7 +9,47 @@ const Contacts = () => {
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+
+  const handleNewsletterSubmit = async () => {
+    if (!newsletterEmail) {
+      setSubmitError("Please enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xldbnkvv", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email: newsletterEmail })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setNewsletterEmail("");
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000); // Reset after 5s
+      } else {
+        setSubmitError(data?.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setSubmitError("Error submitting form. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const faqItems = [
     {
       question: "What pharmaceutical products does Innovative offer?",
@@ -38,12 +79,6 @@ const Contacts = () => {
     console.log("Form submitted", { firstName, lastName, email, message });
   };
 
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    // Handle newsletter submission
-    console.log("Newsletter subscription:", newsletterEmail);
-  };
-
   return (
     <div className="bg-white">
       {/* Hero Section with Enhanced Gradient */}
@@ -52,7 +87,7 @@ const Contacts = () => {
         <div className="absolute inset-0 opacity-20 "></div>
         
         <div className="container mx-auto py-40 px-6 relative">
-          <div className="text-center max-w-4xl mx-auto font-Satoshi" >
+          <div className="text-center max-w-4xl mx-auto font-Satoshi">
             <h1 className="font-nulshock text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
               Get In Touch
             </h1>
@@ -67,7 +102,7 @@ const Contacts = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Improved Wave Divider */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" className="w-full h-auto">
@@ -121,158 +156,57 @@ const Contacts = () => {
       </div>
 
       {/* Contact Information Section with Modern Design */}
-      <section className="py-24 bg-gradient-to-b from-white to-blue-50" id="contact-form">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Information Column */}
-            <div className="w-full">
-              <div className="mb-12">
-                <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">Contact Us</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Let's Connect
-                </h2>
-                <p className="text-gray-600 text-lg max-w-lg">
-                  Innovative, a leading American Middle East-based pharmaceutical provider, delivers premium medications ensuring optimal health outcomes worldwide.
-                </p>
-              </div>
-
-              <div className="space-y-10">
-                {/* Mail Address */}
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-4 rounded-full mr-5">
-                    <Mail className="text-blue-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-gray-800 mb-2">Mail Us</h3>
-                    <p className="text-blue-700 font-medium mb-1">innovativeus@mail.com</p>
-                    <p className="text-gray-600">info@innovativeamems.com</p>
-                  </div>
-                </div>
-
-                {/* Phone Number */}
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-4 rounded-full mr-5">
-                    <Phone className="text-blue-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-gray-800 mb-2">Call Us</h3>
-                    <p className="text-gray-600 mb-1">+1 702 595 3772</p>
-                    <p className="text-gray-600">+971 56 2272323</p>
-                  </div>
-                </div>
-
-                {/* Our Address */}
-                <div className="flex items-start">
-                  <div className="bg-blue-100 p-4 rounded-full mr-5">
-                    <MapPin className="text-blue-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-gray-800 mb-2">Our Location</h3>
-                    <p className="text-gray-600">
-                      246-123, Al Habtoor Industrial Area, Al Qusais, Ind. Area 3, Dubai, United Arab Emirates
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form Column */}
-            <div className="w-full">
-              <div className="bg-white p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-gray-700 mb-2 font-medium">First Name</label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full p-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-gray-700 mb-2 font-medium">Last Name</label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      className="w-full p-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                </div>
-                
-                <div className="mb-6">
-                  <label htmlFor="email" className="block text-gray-700 mb-2 font-medium">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    className="w-full p-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 mb-2 font-medium">Message</label>
-                  <textarea
-                    id="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    rows="5"
-                    className="w-full p-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  ></textarea>
-                </div>
-                
-                <button
-                  onClick={handleSubmit}
-                  className="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium py-4 px-8 rounded-lg transition duration-300 shadow-md hover:shadow-lg"
-                >
-                  Send Message
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <ContactForm />
       {/* Newsletter Section with Enhanced Design */}
       <div className="max-w-6xl mx-auto my-24 px-6">
         <div className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl px-8 py-16 text-center shadow-xl relative overflow-hidden">
-          {/* Abstract shapes for visual interest */}
+          {/* Abstract shapes */}
           <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-blue-500 opacity-10"></div>
           <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-indigo-600 opacity-10"></div>
 
           <div className="relative z-10 max-w-3xl mx-auto">
-            <span className="inline-block px-4 py-2 bg-blue-800 bg-opacity-50 text-blue-100 rounded-full text-sm font-semibold mb-4">Stay Updated</span>
+            <span className="inline-block px-4 py-2 bg-blue-800 bg-opacity-50 text-blue-100 rounded-full text-sm font-semibold mb-4">
+              Stay Updated
+            </span>
             <h2 className="text-4xl font-bold text-white mb-6">Subscribe to Our Newsletter</h2>
             <p className="text-blue-100 text-lg mb-10 opacity-90">
               Get the latest updates on new products, special offers, and industry insights delivered straight to your inbox.
             </p>
 
-            <div className="flex flex-col sm:flex-row max-w-xl mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                className="flex-1 py-4 px-6 rounded-l-lg text-base focus:outline-none focus:ring-2 focus:ring-blue-300 border-0"
-              />
-              <button 
-                onClick={handleNewsletterSubmit}
-                className="bg-white text-blue-800 py-4 px-8 rounded-r-lg font-medium transition-colors duration-300 hover:bg-blue-50 border-0"
-              >
-                Subscribe
-              </button>
-            </div>
-            <p className="text-blue-200 text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+            {!isSubmitted ? (
+              <>
+                <div className="flex flex-col sm:flex-row max-w-xl mx-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    className="flex-1 py-4 px-6 rounded-l-lg text-base focus:outline-none focus:ring-2 focus:ring-blue-300 border-0"
+                    required
+                  />
+                  <button
+                    onClick={handleNewsletterSubmit}
+                    disabled={isSubmitting}
+                    className="bg-white text-blue-800 py-4 px-8 rounded-r-lg font-medium transition-colors duration-300 hover:bg-blue-50 border-0"
+                  >
+                    {isSubmitting ? "Submitting..." : "Subscribe"}
+                  </button>
+                </div>
+                {submitError && (
+                  <p className="text-red-200 text-sm mt-4">{submitError}</p>
+                )}
+                <p className="text-blue-200 text-sm mt-4">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </>
+            ) : (
+              <div className="text-green-100 text-lg font-semibold mt-4">
+                ✅ You’ve successfully subscribed!
+              </div>
+            )}
           </div>
         </div>
       </div>
-
     </div>
   );
 };
