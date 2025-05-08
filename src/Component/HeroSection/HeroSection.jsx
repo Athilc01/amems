@@ -1,146 +1,165 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import logo from '../../assets/logo/pharma.png';
-import doctor from '../../../public/images/DocProduct-1.png';
+import { useState, useEffect, useRef } from "react";
+import doctor from '../../../public/images/doctor.png';
 
-const Hero = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+export default function HealthcareBanner() {
+  const bannerRef = useRef(null);
+  const titleRef = useRef(null);
+  const doctorRef = useRef(null);
+  const taglineRef = useRef(null);
+  const bulletPointsRef = useRef(null);
+  const contactRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6 } 
-    }
-  };
+  useEffect(() => {
+    // Import GSAP and ScrollTrigger dynamically to avoid SSR issues
+    const loadGSAP = async () => {
+      const gsapModule = await import('gsap');
+      const scrollTriggerModule = await import('gsap/ScrollTrigger');
+      
+      const gsap = gsapModule.default;
+      const ScrollTrigger = scrollTriggerModule.default;
+      
+      // Register the ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Create a timeline for the banner animations
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: bannerRef.current,
+          start: "top 80%", // Animation starts when the top of the banner is 80% from the top of viewport
+          end: "bottom 20%", // Animation ends when the bottom of the banner is 20% from the top of viewport
+          toggleActions: "play none none reverse", // play on enter, reverse on leave
+        }
+      });
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+      // Animate the AMEMS title
+      tl.fromTo(titleRef.current, 
+        { opacity: 0, y: 100 }, 
+        { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, 
+        0
+      );
+      
+      // Animate the doctor image
+      tl.fromTo(doctorRef.current, 
+        { opacity: 0, scale: 0.8 }, 
+        { opacity: 1, scale: 1, duration: 1.2, ease: "back.out(1.2)" }, 
+        0.3
+      );
+      
+      // Animate the tagline
+      tl.fromTo(taglineRef.current, 
+        { opacity: 0, y: 30 }, 
+        { opacity: 1, y: 0, duration: 0.8 }, 
+        0.6
+      );
+      
+      // Animate the bullet points individually
+      const bulletPoints = bulletPointsRef.current.querySelectorAll('li');
+      bulletPoints.forEach((point, index) => {
+        tl.fromTo(point, 
+          { opacity: 0, x: -30 }, 
+          { opacity: 1, x: 0, duration: 0.5 }, 
+          0.8 + (index * 0.2)
+        );
+      });
+      
+      // Animate the contact info
+      tl.fromTo(contactRef.current, 
+        { opacity: 0, y: 20 }, 
+        { opacity: 1, y: 0, duration: 0.8 }, 
+        1.2
+      );
+      
+      // Animate the button with a bounce effect
+      tl.fromTo(buttonRef.current, 
+        { opacity: 0, scale: 0 }, 
+        { opacity: 1, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.3)" }, 
+        1.5
+      );
+    };
 
-  const imageAnimation = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      scale: 1,
-      transition: { 
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        duration: 0.8
+    loadGSAP();
+
+    // Cleanup function
+    return () => {
+      const ScrollTrigger = window.ScrollTrigger;
+      if (ScrollTrigger) {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       }
-    }
-  };
-
-  const buttonAnimation = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
-  };
-
-  const floatingAnimation = {
-    animate: {
-      y: [0, -10, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut"
-      }
-    }
-  };
+    };
+  }, []);
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <motion.div 
-        initial="hidden"
-        animate="visible"
-        variants={staggerContainer}
-        className="max-w-7xl mx-auto px-8 py-12 mt-20 flex flex-col md:flex-row items-center"
-      >
-        {/* Left Column */}
-        <motion.div 
-          variants={fadeIn}
-          className="w-full md:w-1/2 pr-0 md:pr-12 mb-10 md:mb-0"
-        >
-          <div className="">
-            <motion.h1 
-              variants={fadeIn}
-              className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-6 font-Satoshi"
+    <div className="flex justify-center w-full mt-36 px-4" ref={bannerRef}>
+      <div className="relative bg-back rounded-3xl overflow-hidden py-8 px-10 text-white max-w-7xl w-full">
+        {/* Main content layout */}
+        <div className="relative">
+          {/* AMEMS large text with image overlay */}
+          <div className="relative mb-10 ">
+            <h1 
+              ref={titleRef}
+              className="font-nulshock  text-6xl sm:text-center text-white mb-14 sm:text-9xl font-extrabold" 
+            
             >
-              American Middle Eastern{" "} 
-              
-              <motion.span 
-                className="relative inline-block"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <motion.span 
-                  className="bg-blue-100 absolute inset-0 rounded-full"
-                  animate={{ rotate: [-3, 0, -3] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                ></motion.span>
-                <span className="relative">Drug Store</span>
-              </motion.span>{" "}
-            </motion.h1>
-            <motion.p 
-              variants={fadeIn}
-              className="text-2xl"
-            > 
-              Revolutionizing Healthcare in the Middle East
-            </motion.p>
+              AMEMS
+            </h1>
+            
+            {/* Doctor image positioned to appear centered within the text */}
+            <div 
+              ref={doctorRef}
+              className="absolute " 
+              style={{ 
+                left: '50%', 
+                top: '140%', 
+                transform: 'translate(-50%, -50%)',
+                zIndex: 20,
+                height: '280%'
+              }}
+            >
+              <img 
+                src={doctor} 
+                alt="Healthcare professional" 
+                className="hidden sm:block h-[400px] object-contain"
+              />
+            </div>
           </div>
+          
+          {/* Content below the main title */}
+          <div className="mt-4">
+            {/* Tagline */}
+            <h2 ref={taglineRef} className="font-semibold text-white text-xl mb-8">
+              Revolutionizing Healthcare in Middle East
+            </h2>
 
-          <motion.div 
-            variants={fadeIn}
-            className="flex flex-wrap gap-4 mt-8"
-          >
-            <motion.button 
-              variants={buttonAnimation}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-amemsblue text-white px-6 py-3 rounded-3xl hover:bg-blue-800 transition-colors !rounded-button whitespace-nowrap cursor-pointer"
-            >
-              Book Now
-            </motion.button>
-          </motion.div>
-        </motion.div>
+            {/* Two column layout */}
+            <div className="flex flex-wrap justify-between">
+              {/* Left column with bullet points */}
+              <div ref={bulletPointsRef} className="w-full md:w-5/12">
+                <ul className="list-disc pl-5 space-y-2">
+                  <li className="text-lg">High Quality Medicine</li>
+                  <li className="text-lg">Affordable Prices</li>
+                  <li className="text-lg">Comprehensive Healthcare Solutions</li>
+                </ul>
+              </div>
 
-        {/* Right Column */}
-        <motion.div 
-          variants={fadeIn}
-          className="md:w-1/2"
-        >
-          <motion.div 
-            className="overflow-hidden"
-            variants={imageAnimation}
-            whileHover={floatingAnimation.animate}
-          >
-            <motion.img
-              src={logo}
-              alt="Doctor"
-              className=""
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-            />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+              {/* Right column with contact info and button */}
+              <div className="w-full md:w-5/12 flex flex-col items-start md:items-end mt-6 md:mt-0">
+                <p ref={contactRef} className="text-lg mb-4">
+                  Contact us today to learn more about<br />our services
+                </p>
+                
+                {/* Quote Button */}
+                <button 
+                  ref={buttonRef}
+                  className="bg-white text-green-700 sm:mr-36 px-8 py-2 rounded-full font-medium hover:bg-green-50 transition-colors"
+                >
+                  Get a Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default Hero;
+}

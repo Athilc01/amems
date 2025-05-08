@@ -1,90 +1,111 @@
-import React from 'react'
+import { useState } from 'react';
+import med1 from '../../../public/images/med.jpeg'
+import med2 from '../../../public/images/med2.jpeg'
 
-const Products = () => {
+export default function HealthProductsDisplay() {
+  // Added Arrow icon for the "See All Products" link
+  const ArrowIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  );
+
+  const products = [
+    {
+      id: 1,
+      category: "Nutrition",
+      name: "Dietary Supplement",
+      description: "Health Products",
+      image: med1,
+      rating: 4.5,
+      originalPrice: 80.00,
+      price: 64.00,
+      discount: 60,
+    },
+    {
+      id: 2,
+      category: "Healthcare",
+      name: "Nitrile Disposable",
+      description: "gloves 100",
+      image: med2,
+      rating: 4.5,
+      originalPrice: null,
+      price: 140.00,
+      discount: null,
+    },
+    {
+      id: 3,
+      category: "Medicine",
+      name: "Women's multi",
+      description: "Vitamins A, Biotin- cranberry",
+      image: med1,
+      rating: 4.5,
+      originalPrice: 160.00,
+      price: 80.00,
+      discount: 60,
+    },
+    {
+      id: 4,
+      category: "Wellness",
+      name: "Antibacterial Liquid",
+      description: "Hand Soap",
+      image: med2,
+      rating: 4.5,
+      originalPrice: null,
+      price: 64.00,
+      discount: null,
+    }
+  ];
+
+
+
   return (
-    <div className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Featured Products
-            </h2>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-              Discover our innovative healthcare solutions designed to improve lives.
-            </p>
-          </div>
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="h-48 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://readdy.ai/api/search-image?query=Modern%20pharmaceutical%20pill%20bottle%20with%20blue%20and%20white%20capsules%20on%20a%20clean%20white%20background%2C%20professional%20lighting%2C%20high-resolution%20product%20photography%2C%20minimalist%20pharmaceutical%20product%20presentation%2C%20medical%20grade%20appearance&width=600&height=400&seq=2&orientation=landscape"
-                  alt="Pharmaceutical product"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-medium text-gray-900">ImmunoBoost Pro</h3>
-                <p className="mt-2 text-gray-500">
-                  Advanced immune support formula with clinically proven ingredients to enhance natural defenses.
-                </p>
-                <div className="mt-4">
-                  <a href="#" className="!rounded-button whitespace-nowrap text-[#1a237e] hover:text-[#0d1752] font-medium cursor-pointer">
-                    Learn more <i className="fas fa-arrow-right ml-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="h-48 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://readdy.ai/api/search-image?query=Modern%20pharmaceutical%20cream%20tube%20and%20box%20packaging%20on%20clean%20white%20background%2C%20professional%20product%20photography%2C%20minimalist%20medical%20product%20presentation%2C%20dermatological%20treatment%20appearance%2C%20high-quality%20healthcare%20product&width=600&height=400&seq=3&orientation=landscape"
-                  alt="Pharmaceutical product"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-medium text-gray-900">DermaClear Solution</h3>
-                <p className="mt-2 text-gray-500">
-                  Revolutionary dermatological treatment for chronic skin conditions with minimal side effects.
-                </p>
-                <div className="mt-4">
-                  <a href="#" className="!rounded-button whitespace-nowrap text-[#1a237e] hover:text-[#0d1752] font-medium cursor-pointer">
-                    Learn more <i className="fas fa-arrow-right ml-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="h-48 overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src="https://readdy.ai/api/search-image?query=Modern%20pharmaceutical%20inhalation%20device%20on%20clean%20white%20background%2C%20professional%20medical%20product%20photography%2C%20minimalist%20respiratory%20treatment%20device%2C%20high-tech%20healthcare%20equipment%2C%20precision%20engineered%20medical%20inhaler&width=600&height=400&seq=4&orientation=landscape"
-                  alt="Pharmaceutical product"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-medium text-gray-900">RespiClear Inhaler</h3>
-                <p className="mt-2 text-gray-500">
-                  Next-generation respiratory treatment delivering precise medication directly to the lungs.
-                </p>
-                <div className="mt-4">
-                  <a href="#" className="!rounded-button whitespace-nowrap text-[#1a237e] hover:text-[#0d1752] font-medium cursor-pointer">
-                    Learn more <i className="fas fa-arrow-right ml-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mt-10 text-center">
-            <a
-              href="#"
-              className="!rounded-button whitespace-nowrap inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#1a237e] hover:bg-[#0d1752] cursor-pointer"
-            >
-              View All Products
-            </a>
-          </div>
+    <div className="bg-indigo-900 rounded-3xl p-10">
+      <div className="max-w-6xl mx-auto mb-6">
+        <div className="flex justify-between items-center">
+          <h1 className="text-white text-4xl font-bold leading-tight">
+            Todays Best Deals<br />
+            For You!
+          </h1>
+          <a href="#" className="text-white flex items-center hover:underline">
+            SEE ALL PRODUCTS <ArrowIcon />
+          </a>
         </div>
       </div>
-  )
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {products.map((product) => (
+          <div key={product.id} className="bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+            <div className="relative p-4">
+              
+              <div className="flex justify-center items-center h-40">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                   className="h-40 w-[250px] transition-transform duration-300 transform hover:scale-110"
+                />
+              </div>
+            </div>
+            
+            <div className="px-4 pb-4">
+              <div className="flex items-center text-sm mb-1">
+                <span className="text-gray-400">{product.category}</span>
+                <div className="ml-auto flex items-center">
+                  <span className="text-orange-400 mr-1">★</span>
+                  <span className="text-gray-700">({product.rating})</span>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-gray-800 font-bold">{product.name}</h3>
+                <p className="text-gray-700 text-sm">{product.description}</p>
+              </div>
+              
+              
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
-
-export default Products

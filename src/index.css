@@ -4,11 +4,14 @@
 
 body {
   @apply font-Satoshi;
+  /* @apply font-nulshock; */
 }
 
 @layer base {
   html {
     font-family: 'Poppins', sans-serif;
+    font-family: 'Nulshock RG', sans-serif;
+
   }
 }
 
