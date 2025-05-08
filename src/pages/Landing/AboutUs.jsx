@@ -3,7 +3,7 @@ import mission from '../../../public/images/missionimg.jpg';
 import vision from '../../../public/images/visionimg.jpg';
 import background from '../../../public/images/background.jpeg';
 import med1 from '../../../public/images/med2.jpeg';
-import medical from '../../../public/images/medicalbanner.png';
+import medical from '../../../public/images/custservice.png';
 import { motion } from "framer-motion";
 
 const App = () => {
@@ -105,166 +105,155 @@ const App = () => {
       </section>
 
       {/* Enhanced Vision & Mission Section - Improved for large screens */}
-      <section className="py-16 sm:py-20 lg:py-24 xl:py-32 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        <div className="container mx-auto max-w-7xl xl:max-w-8xl">
-          <div className="text-center mb-12 lg:mb-16 xl:mb-20">
-            <motion.span 
-              className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium text-sm mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              WHO WE ARE
-            </motion.span>
-            <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-gray-800 mb-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              Our Vision & Mission
-            </motion.h2>
-            <motion.div 
-              className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6"
-              initial={{ width: 0 }}
-              whileInView={{ width: 96 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            ></motion.div>
-            <motion.p 
-              className="text-gray-600 max-w-3xl xl:max-w-4xl mx-auto text-lg xl:text-xl"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-            >
-              Driving pharmaceutical excellence in the Middle East with AMEMS and expertise
-            </motion.p>
-          </div>
+      <section className="py-16 sm:py-20 lg:py-24 xl:py-32 px-4 overflow-hidden relative">
+  {/* Enhanced Background SVG with wider dimensions */}
+  <div className="absolute inset-0 z-0 overflow-hidden">
+    <svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
+      {/* Background gradient */}
+      <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#f0fdf4" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#e0f2fe" stopOpacity="0.6" />
+        </linearGradient>
+        
+        {/* Circle pattern */}
+        <pattern id="circlePattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+          <circle cx="30" cy="30" r="1.5" fill="#3b82f6" opacity="0.2" />
+        </pattern>
+        
+        {/* DNA Helix Symbol */}
+        <symbol id="dnaHelix" viewBox="0 0 100 300">
+          <path d="M30,0 Q50,30 70,0 Q90,30 70,60 Q50,90 30,60 Q10,30 30,0" fill="none" stroke="#84cc16" strokeWidth="2" opacity="0.3" />
+          <path d="M30,80 Q50,110 70,80 Q90,110 70,140 Q50,170 30,140 Q10,110 30,80" fill="none" stroke="#84cc16" strokeWidth="2" opacity="0.3" />
+          <path d="M30,160 Q50,190 70,160 Q90,190 70,220 Q50,250 30,220 Q10,190 30,160" fill="none" stroke="#84cc16" strokeWidth="2" opacity="0.3" />
+          <path d="M30,240 Q50,270 70,240 Q90,270 70,300 Q50,330 30,300 Q10,270 30,240" fill="none" stroke="#84cc16" strokeWidth="2" opacity="0.3" />
           
-          {/* Mission Card - Adjusted for better proportions on large screens */}
-          <div className="flex flex-col lg:flex-row gap-8 xl:gap-16 mb-16 lg:mb-24">
-            <motion.div 
-              className="w-full lg:w-1/2 order-2 lg:order-1"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
-                <div className="bg-blue-600 py-6 px-8">
-                  <h3 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-white flex items-center">
-                    <span className="mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                      </svg>
-                    </span>
-                    Our Mission
-                  </h3>
-                </div>
-                <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                  <p className="text-gray-700 text-base sm:text-lg xl:text-xl leading-relaxed mb-6">
-                    At AMEMS, we are revolutionizing the pharmaceutical landscape in the Middle East through the integration of cutting-edge medical technology and a commitment to professional expertise. Drawing from our experience and knowledge base sourced from the United States and Europe, we strive to provide access to AMEMS drugs and medical solutions that enhance patient care and save lives.
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium text-sm">Excellence</span>
-                    <span className="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium text-sm">Innovation</span>
-                    <span className="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium text-sm">Care</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="w-full lg:w-1/2 order-1 lg:order-2"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
-                <img 
-                  src={mission} 
-                  alt="Medical professional working with technology" 
-                  className="w-full h-full object-cover object-center"
-                  style={{ minHeight: '350px', maxHeight: '600px' }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end">
-                  <div className="p-8">
-                    <span className="inline-block px-3 py-1 bg-white/90 text-blue-600 rounded-md text-sm font-medium mb-3">
-                      Revolutionizing Healthcare
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          {/* Connecting lines */}
+          <line x1="30" y1="30" x2="70" y2="30" stroke="#0ea5e9" strokeWidth="1.5" opacity="0.4" />
+          <line x1="30" y1="110" x2="70" y2="110" stroke="#0ea5e9" strokeWidth="1.5" opacity="0.4" />
+          <line x1="30" y1="190" x2="70" y2="190" stroke="#0ea5e9" strokeWidth="1.5" opacity="0.4" />
+          <line x1="30" y1="270" x2="70" y2="270" stroke="#0ea5e9" strokeWidth="1.5" opacity="0.4" />
+        </symbol>
+        
+        {/* Molecule Symbol */}
+        <symbol id="molecule" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="15" fill="#bae6fd" opacity="0.6" />
+          <circle cx="160" cy="100" r="10" fill="#a7f3d0" opacity="0.6" />
+          <circle cx="40" cy="100" r="10" fill="#a7f3d0" opacity="0.6" />
+          <circle cx="100" cy="160" r="10" fill="#a7f3d0" opacity="0.6" />
+          <circle cx="100" cy="40" r="10" fill="#a7f3d0" opacity="0.6" />
           
-          {/* Vision Card - Adjusted for better proportions on large screens */}
-          <div className="flex flex-col lg:flex-row gap-8 xl:gap-16">
-            <motion.div 
-              className="w-full lg:w-1/2"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
-                <img 
-                  src={vision} 
-                  alt="Healthcare professionals collaborating" 
-                  className="w-full h-full object-cover object-center"
-                  style={{ minHeight: '350px', maxHeight: '600px' }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent flex items-end">
-                  <div className="p-8">
-                    <span className="inline-block px-3 py-1 bg-white/90 text-indigo-600 rounded-md text-sm font-medium mb-3">
-                      Setting New Standards
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="w-full lg:w-1/2"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
-                <div className="bg-indigo-600 py-6 px-8">
-                  <h3 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-white flex items-center">
-                    <span className="mr-3">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </span>
-                    Our Vision
-                  </h3>
-                </div>
-                <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                  <p className="text-gray-700 text-base sm:text-lg xl:text-xl leading-relaxed mb-6">
-                    Our vision at AMEMS is to be the premier provider of pharmaceuticals in the Middle East, setting new standards of excellence in healthcare delivery. By leveraging our team's diverse expertise, including cardiologists, anesthesiologists, general practitioners, pediatricians, surgeons, nephrologists, urologists, neurologists, oncologists, and specialists from various disciplines, we aim to bridge the gap between technological advancement and medical practice.
-                  </p>
-                  <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="inline-block px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium text-sm">Leadership</span>
-                    <span className="inline-block px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium text-sm">Excellence</span>
-                    <span className="inline-block px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium text-sm">Advancement</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          
-         
-        </div>
-      </section>
+          <line x1="115" y1="100" x2="150" y2="100" stroke="#0ea5e9" strokeWidth="2" opacity="0.5" />
+          <line x1="50" y1="100" x2="85" y2="100" stroke="#0ea5e9" strokeWidth="2" opacity="0.5" />
+          <line x1="100" y1="115" x2="100" y2="150" stroke="#0ea5e9" strokeWidth="2" opacity="0.5" />
+          <line x1="100" y1="50" x2="100" y2="85" stroke="#0ea5e9" strokeWidth="2" opacity="0.5" />
+        </symbol>
+        
+        {/* Hexagon Grid Symbol */}
+        <symbol id="hexGrid" viewBox="0 0 300 200">
+          <path d="M50,25 L75,0 L100,25 L100,75 L75,100 L50,75 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M100,25 L125,0 L150,25 L150,75 L125,100 L100,75 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M150,25 L175,0 L200,25 L200,75 L175,100 L150,75 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M75,100 L100,75 L125,100 L125,150 L100,175 L75,150 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M125,100 L150,75 L175,100 L175,150 L150,175 L125,150 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+        </symbol>
+      </defs>
+      
+      {/* Main background */}
+      <rect width="100%" height="100%" fill="url(#bgGradient)" />
+      <rect width="100%" height="100%" fill="url(#circlePattern)" />
+      
+      {/* DNA Helices - Wider spacing */}
+      <use href="#dnaHelix" x="50" y="100" width="100" height="300" />
+      <use href="#dnaHelix" x="1290" y="100" width="100" height="300" />
+      
+      {/* Additional molecules for wider layout */}
+      <use href="#molecule" x="200" y="50" width="200" height="200" opacity="0.7" />
+      <use href="#molecule" x="600" y="300" width="200" height="200" opacity="0.7" />
+      <use href="#molecule" x="300" y="500" width="200" height="200" opacity="0.7" />
+      <use href="#molecule" x="1000" y="100" width="200" height="200" opacity="0.7" />
+      <use href="#molecule" x="900" y="600" width="200" height="200" opacity="0.7" />
+      
+      {/* Hexagon Grids - Added more to fill space */}
+      <use href="#hexGrid" x="400" y="100" width="300" height="200" opacity="0.5" />
+      <use href="#hexGrid" x="100" y="400" width="300" height="200" opacity="0.5" />
+      <use href="#hexGrid" x="800" y="200" width="300" height="200" opacity="0.5" />
+      <use href="#hexGrid" x="600" y="500" width="300" height="200" opacity="0.5" />
+      <use href="#hexGrid" x="1100" y="400" width="300" height="200" opacity="0.5" />
+      
+      {/* More floating circles to fill wider space */}
+      <circle cx="250" cy="200" r="5" fill="#3b82f6" opacity="0.3" />
+      <circle cx="700" cy="150" r="7" fill="#3b82f6" opacity="0.3" />
+      <circle cx="800" cy="450" r="4" fill="#3b82f6" opacity="0.3" />
+      <circle cx="150" cy="650" r="6" fill="#3b82f6" opacity="0.3" />
+      <circle cx="450" cy="380" r="8" fill="#3b82f6" opacity="0.3" />
+      <circle cx="1200" cy="250" r="6" fill="#3b82f6" opacity="0.3" />
+      <circle cx="1050" cy="500" r="5" fill="#3b82f6" opacity="0.3" />
+      <circle cx="950" cy="300" r="7" fill="#3b82f6" opacity="0.3" />
+      <circle cx="1300" cy="550" r="4" fill="#3b82f6" opacity="0.3" />
+    </svg>
+  </div>
 
+  <div className="container mx-auto max-w-7xl xl:max-w-8xl relative z-10">
+    <div className="text-center mb-16">
+      <motion.span 
+        className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium text-sm mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        WHO WE ARE
+      </motion.span>
+      <motion.h2 
+        className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-gray-800 mb-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        Our Vision & Mission
+      </motion.h2>
+      <motion.div 
+        className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6"
+        initial={{ width: 0 }}
+        whileInView={{ width: 96 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      ></motion.div>
+      <motion.p 
+        className="text-gray-600 max-w-3xl xl:max-w-4xl mx-auto text-lg xl:text-xl"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.5 }}
+      >
+        Driving pharmaceutical excellence in the Middle East with AMEMS and expertise
+      </motion.p>
+    </div>
+    
+    {/* Mission Section - Styled like the image with vertical line */}
+    <div className="relative">
+      {/* Vertical dotted line */}
+      <div className="absolute left-1/2 top-0 bottom-0 border-l border-blue-400 border-dashed" style={{ transform: 'translateX(-50%)' }}></div>
+      
+      <div className="text-center mb-16 relative z-10">
+        <h3 className="text-4xl font-bold text-gray-800 mb-6">Our Mission</h3>
+        <p className="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed italic">
+          At AMEMS, we are dedicated to transforming the pharmaceutical landscape in the Middle East by leveraging advanced medical technologies and global expertise. Guided by innovation and professionalism, we aim to deliver life-saving treatments and improve patient outcomes across the region.
+        </p>
+      </div>
+      
+      {/* Vision Section - Styled like the image */}
+      <div className="text-center relative z-10">
+        <h3 className="text-4xl font-bold text-gray-800 mb-6">Our Vision</h3>
+        <p className="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed italic">
+          We strive to be the premier pharmaceutical provider in the Middle East, setting new benchmarks in healthcare excellence. Backed by a diverse team of experts—including cardiologists, anesthesiologists, general practitioners, pediatricians, surgeons, nephrologists, urologists, neurologists, oncologists, and more—we bridge the gap between technological advancement and real-world medical practice to elevate patient care.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Products Section - Improved for large screens */}
       <section className="py-16 px-4 sm:px-8 bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
         <div className="container mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-8xl">
