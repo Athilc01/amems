@@ -9,6 +9,7 @@ import TopButton from "../Component/TopButton.jsx/TopButton";
 import OurProducts from "../pages/Landing/OurProducts";
 import Reviews from "../pages/Landing/Reviews";
 import Contacts from "../pages/Landing/Contacts";
+import QuoteModal from "../Component/QuoteComponent/QuoteComponent";
 
 const RoutesApp = () => {
   return (
@@ -23,6 +24,8 @@ const RoutesApp = () => {
         <Route path="/OurProducts" element={<OurProducts />} />
         <Route path="/Reviews" element={<Reviews />} />
         <Route path="/Contacts" element={<Contacts />} />
+        <Route path="/QuoteModal" element={<QuoteModal />} />
+        
 
         
 

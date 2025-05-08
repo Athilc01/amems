@@ -8,6 +8,7 @@ import Statistics from "../../Component/Statistics/Statistics";
 import Testimonials from "../../Component/Testimonials/Testimonials";
 import CallToAction from "../../Component/CallToAction/CallToAction";
 import Services from "../../Component/Services/Services";
+import MedicalBanner from "../../Component/MedicalBanner/Medicalbanner";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white font-sans">
       <Hero/>
+      <MedicalBanner/>
       <Chooseamems/>
       <Statistics/>
       <Testimonials/>

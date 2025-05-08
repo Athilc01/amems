@@ -1,164 +1,12 @@
-import React from "react";
-import logo from '../../assets/logo/Pharma.png';
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import mission from '../../../public/images/missionimg.jpg';
+import vision from '../../../public/images/visionimg.jpg';
+import background from '../../../public/images/background.jpeg';
+import med1 from '../../../public/images/med2.jpeg';
+import medical from '../../../public/images/medicalbanner.png';
 import { motion } from "framer-motion";
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      when: "beforeChildren"
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut"
-    }
-  }
-};
-
-const fadeInVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeInOut"
-    }
-  }
-};
-
-const scaleVariants = {
-  hidden: { scale: 0.95, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "backOut"
-    }
-  }
-};
-
 const App = () => {
-  return (
-    <motion.div 
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="min-h-[1024px] w-full bg-white"
-    >
-      <AboutUs />
-      <Products />
-      <CustomerServiceSection />
-    </motion.div>
-  );
-};
-
-const AboutUs = () => {
-  return (
-    <section className="mt-[110px] px-8">
-      <div className="container mx-auto">
-        <motion.div 
-          variants={scaleVariants}
-          className="bg-blue-100 rounded-full py-[80px] mb-16 text-center"
-        >
-          <motion.h1 
-            variants={itemVariants}
-            className="text-4xl font-bold text-gray-800"
-          >
-            About Us
-          </motion.h1>
-        </motion.div>
-
-        <SectionBlock
-          title="Mission"
-          content="At Amems, we are revolutionizing the pharmaceutical landscape in the Middle East through the integration of cutting-edge medical technology and a commitment to professional expertise. Drawing from our experience and knowledge base sourced from the United States and Europe, we strive to provide access to Amems drugs and medical solutions that enhance patient care and save lives."
-          imageUrl="https://readdy.ai/api/search-image?query=A%20professional%20medical%20scientist%20or%20doctor%20in%20a%20lab%20coat%20working%20with%20advanced%20medical%20equipment%2C%20analyzing%20data%20on%20computer%20screens%20with%20medical%20charts%20and%20graphs%2C%20clean%20modern%20laboratory%20environment%2C%20soft%20blue%20lighting%2C%20professional%20medical%20setting&width=600&height=400&seq=1&orientation=landscape"
-          imageAlt="Medical professional working with technology"
-        />
-
-        <SectionBlock
-          title="Vision"
-          content="Our vision at Amems is to be the premier provider of pharmaceuticals in the Middle East, setting new standards of excellence in healthcare delivery. By leveraging our team's diverse expertise, including cardiologists, anesthesiologists, general practitioners, pediatricians, surgeons, nephrologists, urologists, neurologists, oncologists, and specialists from various disciplines, we aim to bridge the gap between technological advancement and medical practice."
-          imageUrl="https://readdy.ai/api/search-image?query=A%20diverse%20team%20of%20healthcare%20professionals%20collaborating%20in%20a%20modern%20hospital%20setting%2C%20doctors%20and%20specialists%20reviewing%20medical%20data%2C%20high-tech%20medical%20environment%20with%20blue%20accents%2C%20professional%20healthcare%20setting%20with%20advanced%20equipment&width=600&height=400&seq=2&orientation=landscape"
-          imageAlt="Healthcare professionals collaborating"
-          reverse={true}
-        />
-      </div>
-    </section>
-  );
-};
-
-const SectionBlock = ({ title, content, imageUrl, imageAlt, reverse = false }) => {
-  return (
-    <motion.div 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}
-      className={`grid md:grid-cols-2 gap-16 mb-20`}
-    >
-      {!reverse ? (
-        <>
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col justify-center"
-          >
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">{title}</h2>
-            <p className="text-gray-600 mb-4 text-justify leading-relaxed">{content}</p>
-          </motion.div>
-          <motion.div 
-            variants={itemVariants}
-            className="relative h-80 overflow-hidden rounded-lg"
-          >
-            <motion.img
-              src={imageUrl}
-              alt={imageAlt}
-              className="w-full h-full object-cover object-top"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.div>
-        </>
-      ) : (
-        <>
-          <motion.div 
-            variants={itemVariants}
-            className="relative h-80 overflow-hidden rounded-lg order-2 md:order-1"
-          >
-            <motion.img
-              src={imageUrl}
-              alt={imageAlt}
-              className="w-full h-full object-cover object-top"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.div>
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col justify-center order-1 md:order-2"
-          >
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">{title}</h2>
-            <p className="text-gray-600 mb-4 leading-relaxed text-justify">{content}</p>
-          </motion.div>
-        </>
-      )}
-    </motion.div>
-  );
-};
-
-const Products = () => {
   const productCategories = [
     {
       icon: "fas fa-heartbeat",
@@ -169,7 +17,7 @@ const Products = () => {
     {
       icon: "fas fa-brain",
       title: "Neurology",
-      description: "Amems solutions for neurological disorders and conditions.",
+      description: "Innovative solutions for neurological disorders and conditions.",
       color: "bg-purple-50 text-purple-500"
     },
     {
@@ -186,199 +34,376 @@ const Products = () => {
     }
   ];
 
+  // Set up intersection observer for animations
+  useEffect(() => {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+    
+    return () => {
+      animatedElements.forEach(element => {
+        observer.unobserve(element);
+      });
+    };
+  }, []);
+
   return (
-    <section className="py-16 px-8 bg-gradient-to-b from-gray-50 to-white">
-      <motion.div 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="container mx-auto max-w-6xl"
-      >
-        <motion.div variants={itemVariants} className="text-center mb-12">
-          <motion.h5 
-            variants={itemVariants}
-            className="text-blue-600 font-medium mb-2 uppercase tracking-wider"
-          >
-            Our Solutions
-          </motion.h5>
-          <motion.h2 
-            variants={itemVariants}
-            className="text-4xl font-bold mb-4 text-gray-800"
-          >
-            Amems Medical Products
-          </motion.h2>
-          <motion.div 
-            variants={scaleVariants}
-            className="w-24 h-1 bg-blue-500 mx-auto rounded-full"
-          ></motion.div>
-        </motion.div>
+    <>
+      {/* Hero Section - Improved for large screens */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900 opacity-90"></div>
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00ek0xNyAxN2MwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
+        </div>
         
-        <motion.div variants={itemVariants}>
-          <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-            We address the high prevalence of acquired and congenital
-            cardiovascular disorders in the region while tackling
-            other serious health challenges. Our pharmaceutical products are developed with
-            cutting-edge technology and meet the highest international
-            standards for quality and efficacy.
-          </p>
-        </motion.div>
-        
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* Adjusted container for better scaling on large screens */}
+        <div className="container mx-auto py-[120px] md:py-20 lg:py-32 xl:py-[120px] 2xl:py-48 px-6 relative max-w-4xl">
           <motion.div 
-            variants={containerVariants}
-            className="grid sm:grid-cols-2 gap-6"
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            {productCategories.map((product, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
-              >
-                <div className={`${product.color} w-14 h-14 rounded-full flex items-center justify-center mb-4`}>
-                  <i className={`${product.icon} text-2xl`}></i>
-                </div>
-                <h3 className="font-bold text-xl mb-3 text-gray-800">{product.title}</h3>
-                <p className="text-gray-600">{product.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          <motion.div 
-            variants={itemVariants}
-            className="relative lg:order-2"
-          >
-            <div className="bg-white p-4 rounded-2xl shadow-lg overflow-hidden">
-              <motion.img
-                src={logo}
-                alt="Medical products and pharmaceuticals"
-                className="w-full h-96 object-cover object-center rounded-lg relative z-10"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.div 
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="bg-blue-600 text-white py-3 px-6 rounded-lg absolute bottom-8 left-8 z-20 shadow-md"
-              >
-                <p className="font-bold">Trusted by 500+ Healthcare Providers</p>
-              </motion.div>
-            </div>
+            <h1 className="font-nulshock text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 lg:mb-8">About Us</h1>
+            <p className="text-justify text-white font-extrabold text-lg sm:text-xl xl:text-2xl max-w-3xl xl:max-w-5xl mx-auto">
+            At AMEMS, we are revolutionizing healthcare in the Middle East and US by integrating cutting-edge medical technology with professional
+            expertise.
+            We offer a wide range of FDA-approved pharmaceutical products and services that enhance patient care and improve outcomes.
+            Global manufacturing presence with 4 plants in the US, Mexico, India, and Afghanistan, enabling efficient worldwide supply.
+            Upcoming distribution agreements planned with Germany, Russia, and Macedonia to expand market reach.
+            Focused on pharmaceuticals facing international shortages, especially those not available through domestic distributors or suppliers.
+            Dedicated to making anti-cancer medicines accessible, particularly in low-income countries with limited government budgets and
+            healthcare financing.
+            Committed to bridging the gap in global pharmaceutical availability through strategic distribution and partnerships.
+            </p>
           </motion.div>
         </div>
         
-        <motion.div 
-          variants={containerVariants}
-          className="mt-16 flex flex-wrap justify-center gap-6"
-        >
-          <motion.button 
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors shadow-md"
-          >
-            Browse Products
-          </motion.button>
-          <motion.button 
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white hover:bg-gray-50 text-blue-600 font-medium py-3 px-8 rounded-lg border border-blue-200 transition-colors shadow-sm"
-          >
-            Request Catalog
-          </motion.button>
-        </motion.div>
-      </motion.div>
-    </section>
-  );
-};
+        {/* Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" className="w-full h-auto">
+            <path fill="#f9fafb" fillOpacity="1" d="M0,128L48,117.3C96,107,192,85,288,90.7C384,96,480,128,576,133.3C672,139,768,117,864,101.3C960,85,1056,75,1152,80C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+        </div>
+      </section>
 
-const CustomerServiceSection = () => {
-  return (
-    <div className="container mx-auto px-4 py-12">
-      <motion.div 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="flex flex-col md:flex-row gap-8 mb-20"
-      >
-        <motion.div 
-          variants={itemVariants}
-          className="w-full md:w-1/2"
-        >
-          <motion.img
-            src={logo}
-            alt="Healthcare professionals in lab coats"
-            className="rounded-lg shadow-md w-full h-auto"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          />
-        </motion.div>
-
-        <motion.div 
-          variants={itemVariants}
-          className="w-full md:w-1/2"
-        >
-          <h2 className="text-5xl font-bold text-gray-800 mb-6">Customer Service</h2>
-
-          <motion.p 
-            variants={fadeInVariants}
-            className="text-gray-600 mb-4 text-justify"
-          >
-            We will ensure that the products will arch organization in time according to our contracts within a timeframe consistent with prescribed orders.
-          </motion.p>
-
-          <motion.p 
-            variants={fadeInVariants}
-            className="text-gray-600 mb-4 text-justify"
-          >
-            We will provide education and training to our client and customers and their care givers in accordance with the prescription and the language understood by your members of staff.
-          </motion.p>
-
-          <motion.p 
-            variants={fadeInVariants}
-            className="text-gray-600 mb-8 text-justify"
-          >
-            All products we sell and market in complete compliance with US FDA (Food and Drug Administration).
-          </motion.p>
-
-          <Link to="/Contacts">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-md transition duration-300"
+      {/* Enhanced Vision & Mission Section - Improved for large screens */}
+      <section className="py-16 sm:py-20 lg:py-24 xl:py-32 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="container mx-auto max-w-7xl xl:max-w-8xl">
+          <div className="text-center mb-12 lg:mb-16 xl:mb-20">
+            <motion.span 
+              className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 font-medium text-sm mb-4"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
             >
-              Contact Us Now
-            </motion.button>
-          </Link>
-        </motion.div>
-      </motion.div>
+              WHO WE ARE
+            </motion.span>
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-gray-800 mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              Our Vision & Mission
+            </motion.h2>
+            <motion.div 
+              className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            ></motion.div>
+            <motion.p 
+              className="text-gray-600 max-w-3xl xl:max-w-4xl mx-auto text-lg xl:text-xl"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+            >
+              Driving pharmaceutical excellence in the Middle East with AMEMS and expertise
+            </motion.p>
+          </div>
+          
+          {/* Mission Card - Adjusted for better proportions on large screens */}
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-16 mb-16 lg:mb-24">
+            <motion.div 
+              className="w-full lg:w-1/2 order-2 lg:order-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+                <div className="bg-blue-600 py-6 px-8">
+                  <h3 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-white flex items-center">
+                    <span className="mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                      </svg>
+                    </span>
+                    Our Mission
+                  </h3>
+                </div>
+                <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                  <p className="text-gray-700 text-base sm:text-lg xl:text-xl leading-relaxed mb-6">
+                    At AMEMS, we are revolutionizing the pharmaceutical landscape in the Middle East through the integration of cutting-edge medical technology and a commitment to professional expertise. Drawing from our experience and knowledge base sourced from the United States and Europe, we strive to provide access to AMEMS drugs and medical solutions that enhance patient care and save lives.
+                  </p>
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    <span className="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium text-sm">Excellence</span>
+                    <span className="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium text-sm">Innovation</span>
+                    <span className="inline-block px-4 py-2 rounded-full bg-blue-50 text-blue-600 font-medium text-sm">Care</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="w-full lg:w-1/2 order-1 lg:order-2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
+                <img 
+                  src={mission} 
+                  alt="Medical professional working with technology" 
+                  className="w-full h-full object-cover object-center"
+                  style={{ minHeight: '350px', maxHeight: '600px' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end">
+                  <div className="p-8">
+                    <span className="inline-block px-3 py-1 bg-white/90 text-blue-600 rounded-md text-sm font-medium mb-3">
+                      Revolutionizing Healthcare
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          
+          {/* Vision Card - Adjusted for better proportions on large screens */}
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-16">
+            <motion.div 
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full">
+                <img 
+                  src={vision} 
+                  alt="Healthcare professionals collaborating" 
+                  className="w-full h-full object-cover object-center"
+                  style={{ minHeight: '350px', maxHeight: '600px' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent flex items-end">
+                  <div className="p-8">
+                    <span className="inline-block px-3 py-1 bg-white/90 text-indigo-600 rounded-md text-sm font-medium mb-3">
+                      Setting New Standards
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full flex flex-col">
+                <div className="bg-indigo-600 py-6 px-8">
+                  <h3 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-white flex items-center">
+                    <span className="mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </span>
+                    Our Vision
+                  </h3>
+                </div>
+                <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                  <p className="text-gray-700 text-base sm:text-lg xl:text-xl leading-relaxed mb-6">
+                    Our vision at AMEMS is to be the premier provider of pharmaceuticals in the Middle East, setting new standards of excellence in healthcare delivery. By leveraging our team's diverse expertise, including cardiologists, anesthesiologists, general practitioners, pediatricians, surgeons, nephrologists, urologists, neurologists, oncologists, and specialists from various disciplines, we aim to bridge the gap between technological advancement and medical practice.
+                  </p>
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    <span className="inline-block px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium text-sm">Leadership</span>
+                    <span className="inline-block px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium text-sm">Excellence</span>
+                    <span className="inline-block px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-medium text-sm">Advancement</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          
+         
+        </div>
+      </section>
 
-      <motion.div 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="mb-12"
-      >
-        <motion.h2 
-          variants={itemVariants}
-          className="text-4xl font-bold text-blue-800 mb-4"
-        >
-          Anti-Bribery Statement
-        </motion.h2>
+      {/* Products Section - Improved for large screens */}
+      <section className="py-16 px-4 sm:px-8 bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
+        <div className="container mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-8xl">
+          <div className="text-center mb-8 sm:mb-12 animate-on-scroll fade-in-up">
+            <h5 className="text-blue-600 font-medium mb-2 uppercase tracking-wider">Our Solutions</h5>
+            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold mb-4 text-gray-800">AMEMS Medical Products</h2>
+            <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          </div>
 
-        <motion.p 
-          variants={fadeInVariants}
-          className="text-gray-600 text-justify"
-        >
-          It is Amems US's policy to conduct all of our business in an honest and ethical manner. We take a zero-tolerance approach to bribery and corruption, and we are committed to acting professionally, fairly and with integrity in all our business dealings and relationships. We expect all individuals working for us or on our behalf in any capacity to uphold the spirit of our policy.
-        </motion.p>
-      </motion.div>
-    </div>
+          <p className="text-gray-700 mb-8 leading-relaxed text-base sm:text-lg xl:text-xl max-w-4xl xl:max-w-5xl mx-auto text-center animate-on-scroll fade-in-up">
+            We address the high prevalence of acquired and congenital cardiovascular disorders in the region while tackling
+            other serious health challenges. Our pharmaceutical products are developed with cutting-edge technology and meet
+            the highest international standards for quality and efficacy.
+          </p>
+
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {productCategories.map((product, index) => (
+                <div 
+                  key={index} 
+                  className="animate-on-scroll fade-in-up bg-white p-4 sm:p-6 xl:p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                  style={{ transitionDelay: `${(index * 0.1)}s` }}
+                >
+                  <div className={`${product.color} w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mb-4`}>
+                    <i className={`${product.icon} text-xl sm:text-2xl`}></i>
+                  </div>
+                  <h3 className="font-bold text-lg sm:text-xl xl:text-2xl mb-2 sm:mb-3 text-gray-800">{product.title}</h3>
+                  <p className="text-gray-600 text-sm sm:text-base xl:text-lg">{product.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="relative lg:order-2 animate-on-scroll fade-in-right">
+              <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-lg overflow-hidden">
+                <img
+                  src={med1}
+                  alt="Medical products and pharmaceuticals"
+                  className="w-full rounded-lg relative z-10 object-cover object-center"
+                  style={{ height: "400px", maxHeight: "600px" }}
+                />
+              </div>
+            </div>
+          </div>
+
+  
+        </div>
+      </section>
+
+      {/* Customer Service Section - Improved for large screens */}
+      <div className="container mx-auto px-4 py-12 sm:py-16 xl:py-24 max-w-7xl xl:max-w-8xl">
+        <div className="flex flex-col md:flex-row gap-8 xl:gap-16 mb-16 xl:mb-32">
+          <div className="w-full bg-transparent md:w-1/2 animate-on-scroll fade-in-left">
+            <img 
+              src={medical} 
+              alt="Healthcare professionals in lab coats" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+          </div>
+
+          <div className="w-full md:w-1/2 animate-on-scroll fade-in-right flex flex-col justify-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6">Customer Service</h2>
+            <p className="text-gray-600 mb-4 text-base sm:text-lg xl:text-xl">
+              We will ensure that the products will reach your organization in time according to our contracts within a timeframe consistent with prescribed orders.
+            </p>
+            <p className="text-gray-600 mb-4 text-base sm:text-lg xl:text-xl">
+              We will provide education and training to our client and customers and their caregivers in accordance with the prescription and the language understood by your members of staff.
+            </p>
+            <p className="text-gray-600 mb-8 text-base sm:text-lg xl:text-xl">
+              All products we sell and market are in complete compliance with US FDA (Food and Drug Administration).
+            </p>
+            <a href="/contacts">
+              <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-6 sm:py-3 sm:px-8 xl:py-4 xl:px-10 rounded-md transition duration-300 text-sm sm:text-base xl:text-lg">
+                Contact Us Now
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div className="mb-12 animate-on-scroll fade-in-up">
+          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-blue-800 mb-4">Anti-Bribery Statement</h2>
+          <p className="text-justify text-gray-600 text-base sm:text-lg xl:text-xl max-w-6xl xl:max-w-7xl">
+            It is AMEMS policy to conduct all of our business in an honest and ethical manner. We take a zero-tolerance approach to bribery and corruption, and we are committed to acting professionally, fairly and with integrity in all our business dealings and relationships. We expect all individuals working for us or on our behalf in any capacity to uphold the spirit of our policy.
+          </p>
+        </div>
+      </div>
+
+      {/* CSS for animations */}
+      <style jsx>{`
+        /* Base animation styles */
+        .animate-on-scroll {
+          opacity: 0;
+          transition: all 0.8s ease-out;
+        }
+        
+        .animate-visible {
+          opacity: 1;
+        }
+        
+        /* Animation variations */
+        .fade-in-up {
+          transform: translateY(40px);
+        }
+        
+        .fade-in-up.animate-visible {
+          transform: translateY(0);
+        }
+        
+        .fade-in-down {
+          transform: translateY(-40px);
+        }
+        
+        .fade-in-down.animate-visible {
+          transform: translateY(0);
+        }
+        
+        .fade-in-left {
+          transform: translateX(-40px);
+        }
+        
+        .fade-in-left.animate-visible {
+          transform: translateX(0);
+        }
+        
+        .fade-in-right {
+          transform: translateX(40px);
+        }
+        
+        .fade-in-right.animate-visible {
+          transform: translateX(0);
+        }
+
+        /* Custom media query for very large screens */
+        @media (min-width: 2000px) {
+          .container.max-w-8xl {
+            max-width: 1680px;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 
