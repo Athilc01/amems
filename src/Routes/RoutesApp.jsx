@@ -10,11 +10,13 @@ import OurProducts from "../pages/Landing/OurProducts";
 import Reviews from "../pages/Landing/Reviews";
 import Contacts from "../pages/Landing/Contacts";
 import QuoteModal from "../Component/QuoteComponent/QuoteComponent";
+import ScrollToTop from "../Component/ScrollToTop/ScrollToTop";
 
 const RoutesApp = () => {
   return (
     <>
        <Navbar/>
+       <ScrollToTop/>
       <Routes> 
  
         
