@@ -141,7 +141,8 @@ const MedicalBanner = () => {
   }, []);
 
   return (
-    <div className="relative max-w-7xl mx-auto my-20">
+    // Added px-4 for small gap on both sides for all screen sizes
+    <div className="relative flex justify-center w-full px-4 sm:px-8">
       {/* Blurred background shapes */}
       <div
         ref={blurredShape1Ref}
@@ -154,7 +155,7 @@ const MedicalBanner = () => {
 
       <div
         ref={containerRef}
-        className="max-w-7xl rounded-3xl shadow-2xl overflow-hidden opacity-0 relative"
+        className="max-w-7xl w-full my-20 rounded-3xl shadow-2xl overflow-hidden opacity-0 relative"
       >
         {/* SVG Background */}
         <svg 
@@ -257,7 +258,7 @@ const MedicalBanner = () => {
 
               <p
                 ref={paragraphRef}
-                className="text-justify text-lg leading-relaxed opacity-0"
+                className="p-3 text-justify text-lg leading-relaxed opacity-0"
               >
                 We address the high prevalence of acquired and congenital cardiovascular disorders
                 in the region, as well as other serious health difficulties affecting countries in
