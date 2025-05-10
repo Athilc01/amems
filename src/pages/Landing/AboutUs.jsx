@@ -303,8 +303,8 @@ const App = () => {
       </section>
 
       {/* Customer Service Section - Improved for large screens */}
-      <div className="container mx-auto px-4 py-12 sm:py-16 xl:py-24 max-w-7xl xl:max-w-8xl">
-        <div className="flex flex-col md:flex-row gap-8 xl:gap-16 mb-16 xl:mb-32">
+      <div className="items-center container mx-auto px-4 py-12 sm:py-16 items-center xl:py-24 max-w-7xl xl:max-w-8xl">
+        <div className="flex flex-col items-center md:flex-col gap-8 xl:gap-16 mb-16 xl:mb-32">
           <div className="w-full bg-transparent md:w-1/2 animate-on-scroll fade-in-left">
             <img 
               src={medical} 
@@ -313,19 +313,15 @@ const App = () => {
             />
           </div>
 
-          <div className="w-full md:w-1/2 animate-on-scroll fade-in-right flex flex-col justify-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6">Customer Service</h2>
-            <p className="text-gray-600 mb-4 text-base sm:text-lg xl:text-xl">
-              We will ensure that the products will reach your organization in time according to our contracts within a timeframe consistent with prescribed orders.
-            </p>
-            <p className="text-gray-600 mb-4 text-base sm:text-lg xl:text-xl">
-              We will provide education and training to our client and customers and their caregivers in accordance with the prescription and the language understood by your members of staff.
-            </p>
-            <p className="text-gray-600 mb-8 text-base sm:text-lg xl:text-xl">
-              All products we sell and market are in complete compliance with US FDA (Food and Drug Administration).
-            </p>
+          <div className="text-center items-center text-justify w-full md:w-[900px] animate-on-scroll fade-in-right flex flex-col justify-center">
+            <h2 className="font-nulshock text-4xl text-center sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6">Customer Service</h2>
+              <p className="text-lg">We will ensure that the products will reach your organization in time according to our contracts within a timeframe consistent with prescribed orders.
+              <br />We will provide education and training to our client and customers and their caregivers in accordance with the prescription and the language understood by your members of staff.
+          
+              <br />All products we sell and market are in complete compliance with US FDA (Food and Drug Administration).
+              </p>
             <a href="/contacts">
-              <button className="bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-6 sm:py-3 sm:px-8 xl:py-4 xl:px-10 rounded-md transition duration-300 text-sm sm:text-base xl:text-lg">
+              <button className=" bg-blue-700 mt-5 items-center  hover:bg-blue-800 text-white font-medium py-2 px-6 sm:py-3 sm:px-8 xl:py-4 xl:px-10 rounded-md transition duration-300 text-sm sm:text-base xl:text-lg">
                 Contact Us Now
               </button>
             </a>

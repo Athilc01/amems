@@ -12,16 +12,17 @@ export default function HealthcareBanner() {
   const buttonRef = useRef(null);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false); // State for the quote modal
 
-
   const openQuoteModal = () => {
     setQuoteModalOpen(true);
     // Close the mobile menu if it's open
-    if (isMobileMenuOpen) setIsMobileMenuOpen(false);
-};
+    if (typeof isMobileMenuOpen !== 'undefined' && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
 
-const closeQuoteModal = () => {
+  const closeQuoteModal = () => {
     setQuoteModalOpen(false);
-};
+  };
 
   useEffect(() => {
     // Import GSAP and ScrollTrigger dynamically to avoid SSR issues
@@ -44,9 +45,6 @@ const closeQuoteModal = () => {
           toggleActions: "play none none reverse", // play on enter, reverse on leave
         }
       });
-
-      
-     
 
       // Animate the AMEMS title
       tl.fromTo(titleRef.current, 
@@ -159,29 +157,21 @@ const closeQuoteModal = () => {
   `;
 
   return (
-    <div className="flex justify-center w-full mt-36 px-4" ref={bannerRef}>
-      <div className="relative bg-back rounded-3xl overflow-hidden py-8 px-10 text-white max-w-7xl w-full">
+    <div className="flex justify-center w-full mt-36 sm:mt-20 md:mt-36 px-2 sm:px-4" ref={bannerRef}>
+      <div className="relative bg-back rounded-xl sm:rounded-3xl overflow-hidden py-4 sm:py-6 md:py-8 px-4 sm:px-6 md:px-10 text-white max-w-7xl w-full">
         {/* SVG Background overlay */}
         <div 
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: 1,
-            pointerEvents: 'none'
-          }}
+          className="absolute inset-0 pointer-events-none"
           dangerouslySetInnerHTML={{ __html: backgroundSvg }}
         />
+        
         {/* Main content layout */}
-        <div className="relative" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="relative z-10">
           {/* AMEMS large text with image overlay */}
-          <div className="relative mb-10 ">
+          <div className="relative mb-4 sm:mb-8 md:mb-10">
             <h1 
               ref={titleRef}
-              className="font-nulshock  text-6xl sm:text-center text-white mb-14 sm:text-9xl font-extrabold" 
-            
+              className="font-nulshock text-4xl xs:text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-center text-white mb-6 sm:mb-10 md:mb-14 font-extrabold" 
             >
               AMEMS
             </h1>
@@ -189,19 +179,22 @@ const closeQuoteModal = () => {
             {/* Doctor image positioned to appear centered within the text */}
             <div 
               ref={doctorRef}
-              className="absolute " 
-              style={{ 
-                left: '50%', 
-                top: '165%', 
+              className="absolute left-1/2 transform -translate-x-1/2"
+              style={{
+                top: '165%',
                 transform: 'translate(-50%, -50%)',
                 zIndex: 20,
-                height: '280%'
+                height: 'auto',
+                width: '100%',
+                maxWidth: '400px',
+                display: 'flex',
+                justifyContent: 'center'
               }}
             >
               <img 
                 src={doctor} 
                 alt="Healthcare professional" 
-                className="hidden sm:block h-[400px] object-contain"
+                className="hidden sm:block w-full max-h-[400px] object-contain"
               />
             </div>
           </div>
@@ -209,32 +202,32 @@ const closeQuoteModal = () => {
           {/* Content below the main title */}
           <div className="mt-4">
             {/* Tagline */}
-            <h2 ref={taglineRef} className="font-nulshock text-white text-2xl mb-8">
-              Delivering Excellence <br />in Every   Dose
+            <h2 ref={taglineRef} className="font-nulshock text-white text-xl sm:text-2xl mb-4 sm:mb-8 text-center sm:text-left">
+              Delivering Excellence <br className="hidden xs:block" />in Every Dose
             </h2>
 
-            {/* Two column layout - fixed alignment */}
-            <div className="flex flex-wrap justify-between items-start">
+            {/* Two column layout - responsive */}
+            <div className="flex flex-col sm:flex-row flex-wrap justify-between items-start">
               {/* Left column with bullet points */}
-              <div ref={bulletPointsRef} className="w-full md:w-5/12">
-                <ul className="font-nulshock list-disc pl-5 space-y-2">
-                  <li className="text-lg">High Quality Medicine</li>
-                  <li className="text-lg">Affordable Prices</li>
-                  <li className="text-lg">Comprehensive Healthcare Solutions</li>
+              <div ref={bulletPointsRef} className="w-full sm:w-1/2 md:w-5/12 mb-4 sm:mb-0">
+                <ul className="font-nulshock list-disc pl-5 space-y-1 sm:space-y-2">
+                  <li className="text-base sm:text-lg">High Quality Medicine</li>
+                  <li className="text-base sm:text-lg">Affordable Prices</li>
+                  <li className="text-base sm:text-lg">Comprehensive Healthcare Solutions</li>
                 </ul>
               </div>
 
               {/* Right column with contact info and button */}
-              <div className="font-nulshock w-full md:w-5/12 text-justify flex flex-col items-center md:items-center">
-                <p ref={contactRef} className="text-lg mb-4">
-                  Contact us today to <br />learn more about<br />our services
+              <div className="font-nulshock w-full sm:w-1/2 md:w-4/12 text-center sm:text-left flex flex-col items-center sm:items-start">
+                <p ref={contactRef} className="text-base sm:text-lg mb-4">
+                  Contact us today to learn more about our services
                 </p>
                 
                 {/* Quote Button */}
                 <button 
-                onClick={openQuoteModal}
+                  onClick={openQuoteModal}
                   ref={buttonRef}
-                  className="bg-white text-green-700 sm:mr-[90px] px-5 py-2 rounded-full font-medium hover:bg-green-50 transition-colors"
+                  className="bg-white text-green-700 px-5 py-2 rounded-full font-medium hover:bg-green-50 transition-colors sm:ml-0 md:ml-0 lg:mr-0"
                 >
                   Get a Quote
                 </button>
@@ -243,13 +236,13 @@ const closeQuoteModal = () => {
           </div>
         </div>
       </div>
+      
       {quoteModalOpen && (
-                <QuoteModal 
-                    isOpen={quoteModalOpen}
-                    onClose={closeQuoteModal}
-                />
-            )}
+        <QuoteModal 
+          isOpen={quoteModalOpen}
+          onClose={closeQuoteModal}
+        />
+      )}
     </div>
-    
   );
 }

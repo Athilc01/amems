@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f0f4f8" />
+    </linearGradient>
+    
+    <!-- Abstract wave pattern -->
+    <pattern id="wavyPattern" patternUnits="userSpaceOnUse" width="200" height="200">
+      <path d="M0,100 C40,80 60,120 100,100 C140,80 160,120 200,100" 
+            fill="none" stroke="#e0e7ff" stroke-width="2" />
+      <path d="M0,50 C40,30 60,70 100,50 C140,30 160,70 200,50" 
+            fill="none" stroke="#e0e7ff" stroke-width="2" />
+      <path d="M0,150 C40,130 60,170 100,150 C140,130 160,170 200,150" 
+            fill="none" stroke="#e0e7ff" stroke-width="2" />
+    </pattern>
+    
+    <!-- Medical/pharma related subtle pattern -->
+    <pattern id="medicalGrid" patternUnits="userSpaceOnUse" width="60" height="60">
+      <circle cx="10" cy="10" r="2" fill="#c7d2fe" opacity="0.4" />
+      <circle cx="30" cy="30" r="1.5" fill="#818cf8" opacity="0.3" />
+      <circle cx="50" cy="50" r="2" fill="#c7d2fe" opacity="0.4" />
+    </pattern>
+    
+    <!-- Decorative elements -->
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+    </filter>
+  </defs>
+  
+  <!-- Base Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+  
+  <!-- Pattern Layer -->
+  <rect width="100%" height="100%" fill="url(#wavyPattern)" opacity="0.3" />
+  <rect width="100%" height="100%" fill="url(#medicalGrid)" />
+  
+  <!-- Abstract Decorative Elements -->
+  <circle cx="100" cy="100" r="300" fill="#4338ca" opacity="0.03" filter="url(#blur)" />
+  <circle cx="1100" cy="500" r="250" fill="#4338ca" opacity="0.03" filter="url(#blur)" />
+  
+  <!-- Top Right Decorative Element -->
+  <path d="M1200,0 Q1000,100 1100,300 T1200,400" fill="none" stroke="#818cf8" stroke-width="2" opacity="0.2" />
+  
+  <!-- Bottom Left Decorative Element -->
+  <path d="M0,600 Q200,500 100,300 T0,200" fill="none" stroke="#818cf8" stroke-width="2" opacity="0.2" />
+  
+  <!-- Subtle Grid Lines -->
+  <g stroke="#e0e7ff" stroke-width="1" opacity="0.2">
+    <line x1="0" y1="150" x2="1200" y2="150" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="450" x2="1200" y2="450" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="900" y1="0" x2="900" y2="600" />
+  </g>
+  
+  <!-- Subtle Quote Marks -->
+  <text x="150" y="200" font-family="serif" font-size="200" fill="#e0e7ff" opacity="0.1">"</text>
+  <text x="950" y="450" font-family="serif" font-size="200" fill="#e0e7ff" opacity="0.1">"</text>
+</svg>

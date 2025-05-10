@@ -212,54 +212,56 @@ const Chooseamems = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto bg-gradient-to-b from-gray-50 to-gray-100 font-Satoshi">
-      <div className="max-w-7xl mx-auto p-10 rounded-3xl sm:px-6 lg:px-8 bg-indigo-900 relative overflow-hidden">
-        {/* SVG Background overlay */}
-        <div 
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: 1,
-            pointerEvents: 'none'
-          }}
-          dangerouslySetInnerHTML={{ __html: backgroundSvg }}
-        />
-        
-        {/* Content with higher z-index */}
-        <div className="relative z-10">
-          <div className="text-center">
-            <h2
-              ref={titleRef}
-              className="text-3xl font-nulshock font-extrabold text-white sm:text-5xl"
-            >
-              Why Choose AMEMS
-            </h2>
-            <p
-              ref={descriptionRef}
-              className="mt-4 max-w-2xl text-xl text-white mx-auto"
-            >
-              Discover why we are the best choice for your healthcare needs
-            </p>
-          </div>
+    <div className="flex justify-center w-full px-4 sm:px-8">
+      <div className="max-w-7xl w-full bg-gradient-to-b from-gray-50 to-gray-100 font-Satoshi">
+        <div className="w-full p-4 sm:p-10 rounded-3xl bg-indigo-900 relative overflow-hidden">
+          {/* SVG Background overlay */}
+          <div 
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: 1,
+              pointerEvents: 'none'
+            }}
+            dangerouslySetInnerHTML={{ __html: backgroundSvg }}
+          />
+          
+          {/* Content with higher z-index */}
+          <div className="relative z-10">
+            <div className="text-center">
+              <h2
+                ref={titleRef}
+                className="text-3xl font-nulshock font-extrabold text-white sm:text-5xl"
+              >
+                Why Choose AMEMS
+              </h2>
+              <p
+                ref={descriptionRef}
+                className="mt-4 max-w-2xl text-xl text-white mx-auto"
+              >
+                Discover why we are the best choice for your healthcare needs
+              </p>
+            </div>
 
-          <div className="mt-12">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-4 lg:grid-cols-4">
-              {features.map((item, index) => (
-                <div
-                  key={index}
-                  ref={addToRefs}
-                  className={`${cardColors[index].bg} p-6 rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-1`}
-                >
-                  <div className={`${cardColors[index].iconBg} w-14 h-14 rounded-full flex items-center justify-center mb-5`}>
-                    <i className={`${item.icon} text-2xl ${cardColors[index].iconColor}`}></i>
+            <div className="mt-12">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+                {features.map((item, index) => (
+                  <div
+                    key={index}
+                    ref={addToRefs}
+                    className={`${cardColors[index].bg} p-6 rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-1`}
+                  >
+                    <div className={`${cardColors[index].iconBg} w-14 h-14 rounded-full flex items-center justify-center mb-5`}>
+                      <i className={`${item.icon} text-2xl ${cardColors[index].iconColor}`}></i>
+                    </div>
+                    <h3 className={`text-xl font-bold ${cardColors[index].title} mb-3`}>{item.title}</h3>
+                    <p className="text-gray-600">{item.desc}</p>
                   </div>
-                  <h3 className={`text-xl font-bold ${cardColors[index].title} mb-3`}>{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
