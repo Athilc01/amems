@@ -34,7 +34,7 @@ const CallToAction = () => {
               
               {/* Contact Us Button */}
               <a 
-                href="#contact" 
+                href="/Contacts" 
                 className="inline-flex items-center justify-center gap-2 bg-indigo-800 hover:bg-indigo-900 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 shadow-md"
               >
                 <span>Contact Us</span>

@@ -30,8 +30,12 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-gray-800 mb-2">Mail Us</h3>
-                    <p className="text-blue-700 font-medium mb-1">innovativeus@mail.com</p>
-                    <p className="text-gray-600">info@innovativeamems.com</p>
+                        <a href="mailto:innovativeus@mail.com" className="text-blue-700 font-medium mb-1">
+                        innovativeus@mail.com
+                        </a><br />
+                        <a href="mailto:info@innovativeamems.com" className="text-gray-600">
+                        info@innovativeamems.com
+                        </a>
                   </div>
                 </div>
 

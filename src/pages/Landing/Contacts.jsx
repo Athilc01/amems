@@ -175,19 +175,19 @@ const Contacts = () => {
 
             {!isSubmitted ? (
               <>
-                <div className="flex flex-col sm:flex-row max-w-xl mx-auto">
+                <div className="flex flex-col gap-2 sm:flex-row max-w-xl mx-auto">
                   <input
                     type="email"
                     placeholder="Enter your email"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
-                    className="flex-1 py-4 px-6 rounded-l-lg text-base focus:outline-none focus:ring-2 focus:ring-blue-300 border-0"
+                    className="flex-1 py-4 px-6 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-blue-300 border-0"
                     required
                   />
                   <button
                     onClick={handleNewsletterSubmit}
                     disabled={isSubmitting}
-                    className="bg-white text-blue-800 py-4 px-8 rounded-r-lg font-medium transition-colors duration-300 hover:bg-blue-50 border-0"
+                    className="bg-white text-blue-800 py-4 px-8 rounded-lg font-medium transition-colors duration-300 hover:bg-blue-50 border-0"
                   >
                     {isSubmitting ? "Submitting..." : "Subscribe"}
                   </button>

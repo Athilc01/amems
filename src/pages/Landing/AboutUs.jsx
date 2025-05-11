@@ -259,7 +259,7 @@ const App = () => {
         <div className="container mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-8xl">
           <div className="text-center mb-8 sm:mb-12 animate-on-scroll fade-in-up">
             <h5 className="text-blue-600 font-medium mb-2 uppercase tracking-wider">Our Solutions</h5>
-            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold mb-4 text-gray-800">AMEMS Medical Products</h2>
+            <h2 className="font-nulshock text-3xl sm:text-4xl xl:text-5xl font-bold mb-4 text-gray-800">AMEMS Medical Products</h2>
             <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
           </div>
 
@@ -329,7 +329,7 @@ const App = () => {
         </div>
 
         <div className="mb-12 animate-on-scroll fade-in-up">
-          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-blue-800 mb-4">Anti-Bribery Statement</h2>
+          <h2 className="font-nulshock text-center text-2xl sm:text-4xl xl:text-5xl font-bold text-blue-800 mb-4">Anti-Bribery Statement</h2>
           <p className="text-justify text-gray-600 text-base sm:text-lg xl:text-xl max-w-6xl xl:max-w-7xl">
             It is AMEMS policy to conduct all of our business in an honest and ethical manner. We take a zero-tolerance approach to bribery and corruption, and we are committed to acting professionally, fairly and with integrity in all our business dealings and relationships. We expect all individuals working for us or on our behalf in any capacity to uphold the spirit of our policy.
           </p>

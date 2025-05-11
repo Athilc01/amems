@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaHeadset, FaAngleRight } from "react-icons/fa";
 import logo from '../../assets/logo/amems-logo.png';
@@ -10,6 +10,8 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState("/");
     const location = useLocation();
     const [quoteModalOpen, setQuoteModalOpen] = useState(false); // State for the quote modal
+    const mobileMenuRef = useRef(null);
+    const mobileButtonRef = useRef(null);
     
 
     // Detect scroll to add effects on navbar
@@ -26,6 +28,34 @@ const Navbar = () => {
     useEffect(() => {
         setActiveLink(location.pathname);
     }, [location]);
+
+    // Handle click outside to close mobile menu
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Close the menu if click is outside menu and not on the toggle button
+            if (
+                isMobileMenuOpen && 
+                mobileMenuRef.current && 
+                !mobileMenuRef.current.contains(event.target) &&
+                mobileButtonRef.current &&
+                !mobileButtonRef.current.contains(event.target)
+            ) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        // Add event listener when menu is open
+        if (isMobileMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+            document.addEventListener('touchstart', handleClickOutside);
+        }
+        
+        // Cleanup
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
+        };
+    }, [isMobileMenuOpen]);
 
     const navLinks = [
         { name: "Home", href: "/" },
@@ -101,6 +131,7 @@ const Navbar = () => {
                         {/* Mobile menu button */}
                         <div className="md:hidden flex items-center">
                             <button
+                                ref={mobileButtonRef}
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                 className="text-gray-700 hover:text-blue-600 focus:outline-none transition-all duration-300"
                                 aria-label="Toggle menu"
@@ -117,6 +148,7 @@ const Navbar = () => {
 
                 {/* Mobile menu */}
                 <div 
+                    ref={mobileMenuRef}
                     className={`md:hidden bg-white rounded-b-2xl shadow-xl overflow-hidden transition-all duration-500 ease-in-out ${
                         isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}

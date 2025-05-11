@@ -251,7 +251,7 @@ const MedicalBanner = () => {
             <div className="py-10 md:py-8 md:pr-12 text-white">
               <h2
                 ref={headingRef}
-                className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight text-center md:text-left opacity-0"
+                className="font-nulshock text-2xl p-2 md:text-4xl font-extrabold mb-6 leading-tight text-center md:text-left opacity-0"
               >
                 Discover Why We Are the Best Choice
               </h2>
