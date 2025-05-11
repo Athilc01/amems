@@ -17,7 +17,7 @@ const ContactForm = () => {
             <div className="w-full">
               <div className="mb-12">
                 <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">Contact Us</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Let's Connect</h2>
+                <h2 className="font-nulshock text-3xl md:text-5xl font-bold text-gray-900 mb-6">Let's Connect</h2>
                 <p className="text-gray-600 text-lg max-w-lg">
                   Innovative, a leading American Middle East-based pharmaceutical provider, delivers premium medications ensuring optimal health outcomes worldwide.
                 </p>

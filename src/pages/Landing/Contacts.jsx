@@ -114,8 +114,8 @@ const Contacts = () => {
       {/* FAQ Section with Enhanced Styling */}
       <div className="max-w-5xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">Frequently Asked Questions</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <span className=" inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">Frequently Asked Questions</span>
+          <h2 className="font-nulshock text-2xl md:text-5xl font-bold text-gray-900 mb-6">
             Have Questions? We're Here to Help
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

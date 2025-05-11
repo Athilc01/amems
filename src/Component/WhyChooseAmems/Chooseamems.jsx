@@ -213,7 +213,7 @@ const Chooseamems = () => {
 
   return (
     <div className="flex justify-center w-full px-4 sm:px-8">
-      <div className="max-w-7xl w-full bg-gradient-to-b from-gray-50 to-gray-100 font-Satoshi">
+      <div className="max-w-7xl w-full  font-Satoshi">
         <div className="w-full p-4 sm:p-10 rounded-3xl bg-indigo-900 relative overflow-hidden">
           {/* SVG Background overlay */}
           <div 
