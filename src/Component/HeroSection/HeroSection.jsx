@@ -220,7 +220,7 @@ export default function HealthcareBanner() {
               {/* Right column with contact info and button */}
               <div className="font-nulshock w-full sm:w-1/2 md:w-4/12 text-center sm:text-left flex flex-col items-center sm:items-start">
                 <p ref={contactRef} className="text-base sm:text-lg mb-4">
-                  Contact us today to learn more about our services
+                  Contact us today to learn more about our services ok
                 </p>
                 
                 {/* Quote Button */}

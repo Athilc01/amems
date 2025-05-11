@@ -64,7 +64,7 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="font-nulshock text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
             What Our <span className="text-indigo-800">Clients</span> Say
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-600 mx-auto leading-relaxed">

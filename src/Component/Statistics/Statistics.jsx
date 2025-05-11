@@ -101,7 +101,7 @@ const Statistics = () => {
   return (
     <div id="stats-section" className="px-4">
       <div className="max-w-7xl mx-auto  p-10  rounded-2xl">
-        <h2 className="text-5xl font-bold text-center text-black mb-16">Our Achievements</h2>
+        <h2 className="font-nulshock text-2xl  sm:text-4xl font-bold text-center text-black mb-16">Our Achievements</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {stats.map((stat, index) => (
