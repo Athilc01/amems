@@ -174,7 +174,7 @@ const Navbar = () => {
                         <div className="pt-4 pb-2">
                             <button 
                                 onClick={openQuoteModal}
-                                className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3.5 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-blue-200/40 transition-all duration-300"
+                                className="w-full bg-back text-white px-4 py-3.5 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-blue-200/40 transition-all duration-300"
                             >
                                 <FaHeadset className="mr-2" />
                                 <span>Get Quote</span>

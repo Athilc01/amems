@@ -158,7 +158,7 @@ const Reviews = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                More Than 
+                More Than &nbsp;
               </motion.span>
               <motion.span
                 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600"
@@ -180,7 +180,7 @@ const Reviews = () => {
             />
             
             <motion.h3 
-              className="text-3xl md:text-4xl font-bold text-indigo-800 mb-12"
+              className="font-nulshock text-3xl md:text-4xl font-bold text-indigo-800 mb-12"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}

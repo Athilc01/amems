@@ -80,6 +80,7 @@ const ContactForm = () => {
                       <input
                         type="text"
                         id="firstName"
+                        placeholder='Enter Your First Name'
                         name="firstName"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
@@ -92,6 +93,7 @@ const ContactForm = () => {
                       <input
                         type="text"
                         id="lastName"
+                        placeholder='Enter Your Last Name'
                         name="lastName"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
@@ -120,6 +122,7 @@ const ContactForm = () => {
                     <textarea
                       id="message"
                       name="message"
+                      placeholder='Enter your message here'
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       rows="5"
