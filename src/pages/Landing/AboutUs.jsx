@@ -305,7 +305,7 @@ const App = () => {
       {/* Customer Service Section - Improved for large screens */}
       <div className="items-center container mx-auto px-4 py-12 sm:py-16 items-center xl:py-24 max-w-7xl xl:max-w-8xl">
         <div className="flex flex-col items-center md:flex-col gap-8 xl:gap-16 mb-16 xl:mb-32">
-          <div className="w-full bg-transparent md:w-1/2 animate-on-scroll fade-in-left">
+          <div className="w-full bg-transparent md:w-3/4 animate-on-scroll fade-in-left">
             <img 
               src={medical} 
               alt="Healthcare professionals in lab coats" 
@@ -329,8 +329,8 @@ const App = () => {
         </div>
 
         <div className="mb-12 animate-on-scroll fade-in-up">
-          <h2 className="font-nulshock text-center text-2xl sm:text-4xl xl:text-5xl font-bold text-blue-800 mb-4">Anti-Bribery Statement</h2>
-          <p className="text-justify text-gray-600 text-base sm:text-lg xl:text-xl max-w-6xl xl:max-w-7xl">
+          <h2 className="font-nulshock text-center text-2xl sm:text-4xl xl:text-5xl font-bold text-black mb-4">Anti-Bribery Statement</h2>
+          <p className="text-justify  text-gray-600  sm:text-lg  xl:text-xl max-w-6xl xl:text-center max-w-7xl">
             It is AMEMS policy to conduct all of our business in an honest and ethical manner. We take a zero-tolerance approach to bribery and corruption, and we are committed to acting professionally, fairly and with integrity in all our business dealings and relationships. We expect all individuals working for us or on our behalf in any capacity to uphold the spirit of our policy.
           </p>
         </div>
