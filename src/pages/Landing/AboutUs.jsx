@@ -74,7 +74,7 @@ const App = () => {
         </div>
         
         {/* Adjusted container for better scaling on large screens */}
-        <div className="container mx-auto py-[120px] md:py-20 lg:py-32 xl:py-[120px] 2xl:py-48 px-6 relative max-w-4xl">
+        <div className="container mx-auto py-40  px-6 relative">
           <motion.div 
             className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
@@ -82,17 +82,10 @@ const App = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="font-nulshock text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 lg:mb-8">About Us</h1>
-            <p className="text-justify text-white font-extrabold text-lg sm:text-xl xl:text-2xl max-w-3xl xl:max-w-5xl mx-auto">
-            At AMEMS, we are revolutionizing healthcare in the Middle East and US by integrating cutting-edge medical technology with professional
-            expertise.
-            We offer a wide range of FDA-approved pharmaceutical products and services that enhance patient care and improve outcomes.
-            Global manufacturing presence with 4 plants in the US, Mexico, India, and Afghanistan, enabling efficient worldwide supply.
-            Upcoming distribution agreements planned with Germany, Russia, and Macedonia to expand market reach.
-            Focused on pharmaceuticals facing international shortages, especially those not available through domestic distributors or suppliers.
-            Dedicated to making anti-cancer medicines accessible, particularly in low-income countries with limited government budgets and
-            healthcare financing.
-            Committed to bridging the gap in global pharmaceutical availability through strategic distribution and partnerships.
+            <p className="text-blue-100 text-xl max-w-3xl mx-auto">
+            At AMEMS, we are dedicated to advancing health and well-being through high-quality, science-driven medicinal products. Our mission is to provide safe, effective, and innovative healthcare solutions that make a real difference in people's lives.
             </p>
+           
           </motion.div>
         </div>
         
@@ -193,6 +186,19 @@ const App = () => {
       <circle cx="1300" cy="550" r="4" fill="#3b82f6" opacity="0.3" />
     </svg>
   </div>
+  <div className="mb-10">
+  <p className="text-justify text-black font-extrabold text-lg sm:text-xl xl:text-2xl max-w-3xl xl:max-w-5xl mx-auto">
+            At AMEMS, we are revolutionizing healthcare in the Middle East and US by integrating cutting-edge medical technology with professional
+            expertise.
+            We offer a wide range of FDA-approved pharmaceutical products and services that enhance patient care and improve outcomes.
+            Global manufacturing presence with 4 plants in the US, Mexico, India, and Afghanistan, enabling efficient worldwide supply.
+            Upcoming distribution agreements planned with Germany, Russia, and Macedonia to expand market reach.
+            Focused on pharmaceuticals facing international shortages, especially those not available through domestic distributors or suppliers.
+            Dedicated to making anti-cancer medicines accessible, particularly in low-income countries with limited government budgets and
+            healthcare financing.
+            Committed to bridging the gap in global pharmaceutical availability through strategic distribution and partnerships.
+            </p>
+  </div>
 
   <div className="container mx-auto max-w-7xl xl:max-w-8xl relative z-10">
     <div className="text-center mb-16">
@@ -212,7 +218,7 @@ const App = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        Our Vision & Mission
+        Our Mission & Vision
       </motion.h2>
       <motion.div 
         className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6"

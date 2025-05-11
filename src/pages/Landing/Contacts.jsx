@@ -111,6 +111,11 @@ const Contacts = () => {
         </div>
       </section>
 
+      
+
+      {/* Contact Information Section with Modern Design */}
+      <ContactForm />
+
       {/* FAQ Section with Enhanced Styling */}
       <div className="max-w-5xl mx-auto px-6 py-24">
         <div className="text-center mb-16">
@@ -154,9 +159,7 @@ const Contacts = () => {
           ))}
         </div>
       </div>
-
-      {/* Contact Information Section with Modern Design */}
-      <ContactForm />
+      
       {/* Newsletter Section with Enhanced Design */}
       <div className="max-w-6xl mx-auto my-24 px-6">
         <div className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl px-8 py-16 text-center shadow-xl relative overflow-hidden">
