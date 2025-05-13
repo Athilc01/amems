@@ -157,7 +157,7 @@ export default function HealthcareBanner() {
   `;
 
   return (
-    <div className="flex justify-center w-full mt-36 sm:mt-20 md:mt-36 px-2 sm:px-4" ref={bannerRef}>
+    <div className="flex justify-center w-full mt-36 sm:mt-20 md:mt-32 px-2 sm:px-4" ref={bannerRef}>
       <div className="relative bg-back rounded-xl sm:rounded-3xl overflow-hidden py-4 sm:py-6 md:py-8 px-4 sm:px-6 md:px-10 text-white max-w-7xl w-full">
         {/* SVG Background overlay */}
         <div 
@@ -203,7 +203,7 @@ export default function HealthcareBanner() {
           <div className="mt-4">
             {/* Tagline */}
             <h2 ref={taglineRef} className="font-nulshock text-white text-xl sm:text-2xl mb-4 sm:mb-8 text-center sm:text-left">
-              Delivering Excellence <br className="hidden xs:block" />in Every Dose
+              Delivering Excellence <br className="hidden sm:block xs:block" />in Every Dose
             </h2>
 
             {/* Two column layout - responsive */}

@@ -27,7 +27,7 @@ const Statistics = () => {
   // Stats data with enhanced details
   const stats = [
     { 
-      value: "107000+", 
+      value: "107000", 
       suffix: '+', 
       label: 'Satisfied Cusotmers',
       icon: (
@@ -58,7 +58,7 @@ const Statistics = () => {
     },
     { 
       value: 80, 
-      suffix: '', 
+      suffix: '+', 
       label: 'Pharma Supplies',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,9 +119,12 @@ const Statistics = () => {
               </div>
               
               <h3 className="text-4xl font-bold text-gray-800 text-center">
-                {isInView ? <AnimatedCounter value={stat.value} suffix={stat.suffix} /> : '0'}
-              </h3>
-              
+  {isInView ? (
+    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+  ) : (
+    '0'
+  )}
+</h3>
               <p className="text-gray-600 font-medium text-center mt-3">{stat.label}</p>
               
               <div className="mt-4 h-1 w-16 bg-indigo-500 mx-auto rounded-full"></div>

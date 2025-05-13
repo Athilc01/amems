@@ -14,7 +14,7 @@ const ContactForm = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             {/* Contact Information Column */}
-            <div className="w-full">
+            <div className="w-full scroll-smooth">
               <div className="mb-12">
                 <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">Contact Us</span>
                 <h2 className="font-nulshock text-3xl md:text-5xl font-bold text-gray-900 mb-6">Let's Connect</h2>
@@ -67,7 +67,7 @@ const ContactForm = () => {
             {/* Contact Form Column */}
             <div className="w-full">
               <div className="bg-white p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                <h3 className="font-nulshock text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
                 
                 <form
                   action="https://formspree.io/f/xldbnkvv"
@@ -111,7 +111,7 @@ const ContactForm = () => {
                       name="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="your@email.com"
+                      placeholder="Enter Your Email Here  "
                       className="w-full p-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
@@ -122,7 +122,7 @@ const ContactForm = () => {
                     <textarea
                       id="message"
                       name="message"
-                      placeholder='Enter your message here'
+                      placeholder='Enter your Message here'
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       rows="5"

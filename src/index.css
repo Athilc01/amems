@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 body {
   @apply font-Satoshi;
-  /* @apply font-nulshock; */
+  scroll-behavior: smooth;
+
 }
 
 @layer base {
