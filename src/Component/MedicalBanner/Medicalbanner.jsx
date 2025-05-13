@@ -144,11 +144,8 @@ const MedicalBanner = () => {
     // Added px-4 for small gap on both sides for all screen sizes
     <div className="relative flex justify-center w-full px-4 sm:px-8">
       {/* Blurred background shapes */}
-      <div
-        ref={blurredShape1Ref}
-        className="absolute -z-10 top-10 left-10 w-72 h-72 bg-teal-300 rounded-full opacity-30 blur-3xl"
-      />
-      <div
+     
+      <dfiv
         ref={blurredShape2Ref}
         className="absolute -z-10 bottom-0 right-10 w-96 h-96 bg-purple-400 rounded-full opacity-20 blur-[100px]"
       />

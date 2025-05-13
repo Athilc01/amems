@@ -64,9 +64,6 @@ const QuoteModal = ({ isOpen, onClose }) => {
     setFormData({
       name: '',
       email: '',
-      phone: '',
-      serviceType: '',
-      budget: '',
       message: ''
     });
     setSubmitted(false);

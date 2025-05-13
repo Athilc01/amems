@@ -94,7 +94,7 @@ const Contacts = () => {
             <p className="text-blue-100 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
               We'd love to hear from you! Whether you have a question, need support, or just want to say hello, reach out and we'll respond promptly.
             </p>
-            <div className="mt-12">
+            <div className="mt-12 scroll-smooth">
               <a href="#contact-form" className="inline-flex items-center px-8 py-4 bg-white text-blue-800 rounded-full font-semibold hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl">
                 Contact Us
                 <Send className="ml-2 h-5 w-5" />
@@ -159,7 +159,7 @@ const Contacts = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Newsletter Section with Enhanced Design */}
       <div className="max-w-6xl mx-auto my-24 px-6">
         <div className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-2xl px-8 py-16 text-center shadow-xl relative overflow-hidden">
