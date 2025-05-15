@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-3 text-blue-200">AMEMS</h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
-              Leading pharmaceutical company dedicated to improving lives through innovative healthcare solutions.
+              Leading pharmaceutical company dedicated to improving lives through AMEMS healthcare solutions.
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Facebook">

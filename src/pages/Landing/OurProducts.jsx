@@ -273,8 +273,8 @@ const OurProducts = () => {
 
           <div ref={doctorTextRef} className="w-full md:w-1/2 md:pl-8">
             <div className="max-w-lg">
-              <span className="text-orange-500 font-medium uppercase tracking-wide">
-                INNOVATIVE
+              <span className="text-gray-500 font-nulshock  uppercase tracking-wide">
+                AMEMS
               </span>
               <h1 className="mt-2 text-4xl sm:text-5xl font-bold text-gray-800 leading-tight">
                 Leading the Way in Pharmaceutical Innovation
@@ -282,11 +282,11 @@ const OurProducts = () => {
               <div className="mt-6 text-gray-500 space-y-4">
                 <p className="text-justify font-bold">
                   Discover a comprehensive range of high-quality pharmaceutical
-                  products at Innovative. From essential medications to
-                  innovative treatments, our product section is your gateway to
+                  products at AMEMS. From essential medications to
+                  AMEMS treatments, our product section is your gateway to
                   excellence in healthcare. Browse our extensive catalog to find
                   FDA-approved solutions tailored to meet your needs. Explore
-                  now and experience the difference with Innovative.
+                  now and experience the difference with AMEMS.
                 </p>
               </div>
             </div>

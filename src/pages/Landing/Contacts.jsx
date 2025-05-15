@@ -52,11 +52,11 @@ const Contacts = () => {
 
   const faqItems = [
     {
-      question: "What pharmaceutical products does Innovative offer?",
-      answer: "Innovative offers a wide range of pharmaceutical products, including prescription medications, over-the-counter drugs, specialty medicines, and innovative treatments for various health conditions."
+      question: "What pharmaceutical products does AMEMS offer?",
+      answer: "AMEMS offers a wide range of pharmaceutical products, including prescription medications, over-the-counter drugs, specialty medicines, and AMEMS treatments for various health conditions."
     },
     {
-      question: "Are Innovative's products FDA-approved?",
+      question: "Are AMEMS's products FDA-approved?",
       answer: "Yes, all of our products have passed rigorous testing and received full FDA approval. We maintain the highest standards of quality and compliance across our entire product line."
     },
     {
@@ -64,7 +64,7 @@ const Contacts = () => {
       answer: "Our dedicated customer support team is available 24/7. Feel free to contact us through email, phone, or the contact form on our website. We aim to respond to all inquiries within 24 hours."
     },
     {
-      question: "Does Innovative offer discounts for bulk orders?",
+      question: "Does AMEMS offer discounts for bulk orders?",
       answer: "Yes, we offer tiered pricing for bulk orders. The larger your order, the greater your savings. Please contact our sales team directly to discuss your specific requirements and receive a customized quote."
     }
   ];

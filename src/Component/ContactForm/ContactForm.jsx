@@ -19,7 +19,7 @@ const ContactForm = () => {
                 <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">Contact Us</span>
                 <h2 className="font-nulshock text-3xl md:text-5xl font-bold text-gray-900 mb-6">Let's Connect</h2>
                 <p className="text-gray-600 text-lg max-w-lg">
-                  Innovative, a leading American Middle East-based pharmaceutical provider, delivers premium medications ensuring optimal health outcomes worldwide.
+                  AMEMS, a leading American Middle East-based pharmaceutical provider, delivers premium medications ensuring optimal health outcomes worldwide.
                 </p>
               </div>
 
@@ -30,12 +30,11 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-gray-800 mb-2">Mail Us</h3>
-                        <a href="mailto:innovativeus@mail.com" className="text-blue-700 font-medium mb-1">
-                        innovativeus@mail.com
+                        <a href="mailto:info@amemsus.com" className="text-blue-700 font-medium mb-1">
+                        info@amemsus.com
                         </a><br />
-                        <a href="mailto:info@innovativeamems.com" className="text-gray-600">
-                        info@innovativeamems.com
-                        </a>
+                        
+                      
                   </div>
                 </div>
 
@@ -55,11 +54,18 @@ const ContactForm = () => {
                     <MapPin className="text-blue-700 h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl text-gray-800 mb-2">Our Location</h3>
-                    <p className="text-gray-600">
-                      246-123, Al Habtoor Industrial Area, Al Qusais, Ind. Area 3, Dubai, United Arab Emirates
-                    </p>
-                  </div>
+            <h3 className="text-xl font-bold mb-3 text-black">Contact</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <MapPin className="mt-1 mr-2 text-black flex-shrink-0" size={16} />
+                <span className="text-black text-sm">Las Vegas, USA 9576 Trattoria Street, Las Vegas, 89178, Nevada, USA</span>
+              </li>
+              <li className="flex items-start">
+                <MapPin className="mt-1 mr-2 text-black flex-shrink-0" size={16} />
+                <span className="text-black text-sm">246-123, Al Habtoor Industrial Area, Al Qusais, Ind. Area 3, Dubai, UAE</span>
+              </li>
+              </ul>
+              </div>
                 </div>
               </div>
             </div>

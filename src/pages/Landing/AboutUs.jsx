@@ -17,7 +17,7 @@ const App = () => {
     {
       icon: "fas fa-brain",
       title: "Neurology",
-      description: "Innovative solutions for neurological disorders and conditions.",
+      description: "AMEMS solutions for neurological disorders and conditions.",
       color: "bg-purple-50 text-purple-500"
     },
     {
@@ -83,7 +83,7 @@ const App = () => {
           >
             <h1 className="font-nulshock text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 lg:mb-8">About Us</h1>
             <p className="text-blue-100 text-xl max-w-3xl mx-auto">
-            At AMEMS, we are dedicated to advancing health and well-being through high-quality, science-driven medicinal products. Our mission is to provide safe, effective, and innovative healthcare solutions that make a real difference in people's lives.
+            At AMEMS, we are dedicated to advancing health and well-being through high-quality, science-driven medicinal products. Our mission is to provide safe, effective, and AMEMS healthcare solutions that make a real difference in people's lives.
             </p>
            
           </motion.div>
