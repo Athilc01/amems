@@ -128,7 +128,7 @@ const Reviews = () => {
           >
             <h1 className="font-nulshock text-4xl md:text-6xl font-bold text-white mb-6">Client Testimonials</h1>
             <p className="text-blue-100 text-xl max-w-3xl mx-auto">
-              Discover what our clients have to say about their experience with AMEMS' pharmaceutical solutions
+              Discover what our clients have to say about their experience with AMEMS pharmaceutical solutions
             </p>
           </motion.div>
         </div>
