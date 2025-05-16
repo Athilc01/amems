@@ -1,8 +1,40 @@
 import React, { useEffect, useRef } from 'react';
 import logo from '../../assets/logo/Pharma.png';
 import doctor from '../../../public/images/DocProduct-1.png';
-import med1 from '../../../public/images/med.jpeg';
-import med2 from '../../../public/images/med2.jpeg';
+import med1 from '../../../public/images/Amemlyte.png';
+import med2 from '../../../public/images/AME-FLEX.png';
+import med3 from '../../../public/images/AMEMPROZOLE.png';
+import med4 from '../../../public/images/AMEMRA-1.png';
+import med5 from '../../../public/images/AMEMRA.png';
+import med6 from '../../../public/images/AMEMSGEL.png';
+import med7 from '../../../public/images/AMEOCATE.png';
+import med8 from '../../../public/images/AMEXBIO.png';
+import med9 from '../../../public/images/ALFAMEMS.png';
+import med10 from '../../../public/images/AMOCONOZOLE.png';
+import med11 from '../../../public/images/AMPIAPERX.png';
+import med12 from '../../../public/images/AMPROLIDE 7.5.png';
+import med13 from '../../../public/images/BORTAMEMS.png';
+import med14 from '../../../public/images/BOTOX.png';
+import med15 from '../../../public/images/CEFOMEMS.png';
+import med16 from '../../../public/images/ELECTROCIDE.png';
+import med17 from '../../../public/images/FRUITS_AMEMS.png';
+import med18 from '../../../public/images/GLIUCASMIN.png';
+import med19 from '../../../public/images/GLUCOAMIN.png';
+import med20 from '../../../public/images/HEPAMEMS.png';
+import med21 from '../../../public/images/INVOSMIL.png';
+import med22 from '../../../public/images/LIQUID_IV_US.png';
+import med23 from '../../../public/images/LIQUID_IV_US2.png';
+import med24 from '../../../public/images/LIQUID_IV_US3.png';
+import med25 from '../../../public/images/LIQUID_IV_US4.png';
+import med26 from '../../../public/images/LITHIUM_CARBONATE.png';
+import med27 from '../../../public/images/OLEXIUM.png';
+import med28 from '../../../public/images/OTIAMEMS.png';
+import med29 from '../../../public/images/PAPAVERINE.png';
+import med30 from '../../../public/images/PROPANOLOL.png';
+import med31 from '../../../public/images/RIFAMES.png';
+import med32 from '../../../public/images/VEGGIES.png';
+ 
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -141,93 +173,290 @@ const OurProducts = () => {
     {
       id: 1,
       category: "Nutrition",
-      name: "AMPROLIDE 7.5 MG",
+      name: "AMEMLYTE 200mg",
       description: "Health Products",
       image: med1,
-      rating: 4.5,
+      rating: 5,
   
     },
     {
       id: 2,
       category: "Nutrition",
-      name: "AMEXONE 1000 MG",
+      name: "AME-FLEX Joint-Health",
       description: "Health Products",
       image: med2,
-      rating: 4.5,
+      rating: 4.9,
   
     },
     {
       id: 3,
       category: "Nutrition",
-      name: "AMECULIA",
+      name: "AMEPROZOLE",
       description: "Health Products",
-      image: med1,
+      image: med3,
       rating: 4.5,
   
     },
     {
       id: 4,
       category: "Nutrition",
-      name: "AMELAC",
+      name: "AMEMRA",
       description: "Health Products",
-      image: med2,
-      rating: 4.5,
+      image: med4,
+      rating: 4.6,
   
     },
     {
       id: 5,
       category: "Nutrition",
-      name: "AMPRO ",
+      name: "AMEMRA-Tocilzumab ",
       description: "Health Products",
-      image: med1,
+      image: med5,
       rating: 4.5,
   
     },
     {
       id: 6,
       category: "Nutrition",
-      name: "PROHEALCA 60 MG ",
+      name: "AMEMS GEL ",
       description: "Health Products",
-      image: med2,
-      rating: 4.5,
+      image: med6,
+      rating: 4.3,
   
     },
     {
       id: 7,
       category: "Nutrition",
-      name: "AMEMSINSULIN R",
+      name: "AMEOCATE ",
       description: "Health Products",
-      image: med1,
-      rating: 4.5,
+      image: med7,
+      rating: 4.4,
   
     },
     {
       id: 8,
       category: "Nutrition",
-      name: "AMEMSINSULIN S",
+      name: "AMEXBIO",
       description: "Health Products",
-      image: med2,
-      rating: 4.5,
+      image: med8,
+      rating: 4.8,
   
     },
     {
       id: 9,
       category: "Nutrition",
-      name: "AMEMSINSULIN M",
+      name: "ALFAMEMS 1mcg",
       description: "Health Products",
-      image: med1,
+      image: med9,
       rating: 4.5,
   
     },
     {
       id: 10,
       category: "Nutrition",
-      name: "AMENITOR 0.5 MG",
+      name: "AMOCONOZOLE 2mg/ml",
       description: "Health Products",
-      image: med2,
+      image: med10,
+      rating: 5,
+  
+    },
+    {
+      id: 11,
+      category: "Nutrition",
+      name: "AMPIAPERX-Adult Diaper",
+      description: "Health Products",
+      image: med11,
+      rating: 5,
+  
+    },
+    {
+      id: 12,
+      category: "Nutrition",
+      name: "AMPROLIDE 7.5mg",
+      description: "Health Products",
+      image: med12,
+      rating: 4.3,
+  
+    },
+    {
+      id: 13,
+      category: "Nutrition",
+      name: "BORTAMEMS-Lyophilized",
+      description: "Health Products",
+      image: med13,
+      rating: 4.2,
+  
+    },
+    {
+      id: 14,
+      category: "Nutrition",
+      name: "BOTOX-Stock Solution",
+      description: "Health Products",
+      image: med14,
+      rating: 4.6,
+  
+    },
+    {
+      id: 15,
+      category: "Nutrition",
+      name: "CEFOAMEMS 750mg ",
+      description: "Health Products",
+      image: med15,
+      rating: 4.8,
+  
+    },
+    {
+      id: 16,
+      category: "Nutrition",
+      name: "ELECTROCIDE ",
+      description: "Health Products",
+      image: med16,
       rating: 4.5,
   
     },
+    {
+      id: 17,
+      category: "Nutrition",
+      name: "FRUITS-AMEMS",
+      description: "Health Products",
+      image: med17,
+      rating: 4.5,
+  
+    },
+    {
+      id: 18,
+      category: "Nutrition",
+      name: "GLUCASMIN CHONDROTIN",
+      description: "Health Products",
+      image: med18,
+      rating: 4.5,
+  
+    },
+    {
+      id: 19,
+      category: "Nutrition",
+      name: "GLUCOAMIN",
+      description: "Health Products",
+      image: med19,
+      rating: 4.5,
+  
+    },
+    {
+      id: 20,
+      category: "Nutrition",
+      name: "HEPAMEMS 5000IU/5ML",
+      description: "Health Products",
+      image: med20,
+      rating: 4.5,
+  
+    },
+    {
+      id: 21,
+      category: "Nutrition",
+      name: "INVOSMIL",
+      description: "Health Products",
+      image: med21,
+      rating: 4,
+  
+    },
+    {
+      id: 22,
+      category: "Nutrition",
+      name: "LIQUID_IV_US (LEMON LIME)",
+      description: "Health Products",
+      image: med22,
+      rating: 4.9,
+  
+    },
+    {
+      id: 23,
+      category: "Nutrition",
+      name: "LIQUID_IV_US (BLACKBERRY PEACH)",
+      description: "Health Products",
+      image: med23,
+      rating: 4.7,
+  
+    },
+    {
+      id: 24,
+      category: "Nutrition",
+      name: "LIQUID_IV_US (MANGO PASSION FRUIT)",
+      description: "Health Products",
+      image: med24,
+      rating: 4.6,
+  
+    },
+    {
+      id: 25,
+      category: "Nutrition",
+      name: "LIQUID_IV_US (LEMON & PEACH) ",
+      description: "Health Products",
+      image: med25,
+      rating: 4.4,
+  
+    },
+    {
+      id: 26,
+      category: "Nutrition",
+      name: "LITHIUM CARBONATE 450mg ",
+      description: "Health Products",
+      image: med26,
+      rating: 5,
+  
+    },
+    {
+      id:27,
+      category: "Nutrition",
+      name: "OLEXIUM",
+      description: "Health Products",
+      image: med27,
+      rating: 4.7,
+  
+    },
+    {
+      id: 28,
+      category: "Nutrition",
+      name: "OTIAMEMS-40",
+      description: "Health Products",
+      image: med28,
+      rating: 4.8,
+  
+    },
+    {
+      id: 29,
+      category: "Nutrition",
+      name: "PAPARIN INJECTION 40mg",
+      description: "Health Products",
+      image: med29,
+      rating: 4.5,
+  
+    },
+    {
+      id: 30,
+      category: "Nutrition",
+      name: "PROPRANOLOL 1mg/ml",
+      description: "Health Products",
+      image: med30,
+      rating: 4.5,
+  
+    },{
+      id: 31,
+      category: "Nutrition",
+      name: "RIFAMES 150mg",
+      description: "Health Products",
+      image: med31,
+      rating: 5,
+  
+    }, 
+    {
+      id: 32,
+      category: "Nutrition",
+      name: "VEGGIES 10 ",
+      description: "Health Products",
+      image: med32,
+      rating: 5,
+  
+    }
   ];
     
  
@@ -302,12 +531,7 @@ const OurProducts = () => {
                 Todays Best Deals<br />
                 For You!
               </h1>
-              <a href="#" className="text-white flex items-center hover:underline group">
-                <span>SEE ALL PRODUCTS</span> 
-                <span className="ml-1 group-hover:translate-x-1 transition-transform duration-300">
-                  <ArrowIcon />
-                </span>
-              </a>
+            
             </div>
           </div>
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
