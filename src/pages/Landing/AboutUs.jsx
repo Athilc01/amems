@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import mission from '../../../public/images/missionimg.jpg';
 import vision from '../../../public/images/visionimg.jpg';
 import background from '../../../public/images/background.jpeg';
-import med1 from '../../assets/images/med2.jpeg';
+import med1 from '../../assets/images/AMOCONOZOLE.png';
 import medical from '../../../public/images/custservice.png';
 import { motion } from "framer-motion";
 
@@ -144,11 +144,11 @@ const App = () => {
         
         {/* Hexagon Grid Symbol */}
         <symbol id="hexGrid" viewBox="0 0 300 200">
-          <path d="M50,25 L75,0 L100,25 L100,75 L75,100 L50,75 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
-          <path d="M100,25 L125,0 L150,25 L150,75 L125,100 L100,75 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
-          <path d="M150,25 L175,0 L200,25 L200,75 L175,100 L150,75 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
-          <path d="M75,100 L100,75 L125,100 L125,150 L100,175 L75,150 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
-          <path d="M125,100 L150,75 L175,100 L175,150 L150,175 L125,150 Z" fill="#86efac" opacity="0.2" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M50,25 L75,0 L100,25 L100,75 L75,100 L50,75 Z" fill="#86efac" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M100,25 L125,0 L150,25 L150,75 L125,100 L100,75 Z" fill="#86efac" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M150,25 L175,0 L200,25 L200,75 L175,100 L150,75 Z" fill="#86efac" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M75,100 L100,75 L125,100 L125,150 L100,175 L75,150 Z" fill="#86efac" stroke="#86efac" strokeWidth="1" opacity="0.3" />
+          <path d="M125,100 L150,75 L175,100 L175,150 L150,175 L125,150 Z" fill="#86efac" stroke="#86efac" strokeWidth="1" opacity="0.3" />
         </symbol>
       </defs>
       
@@ -261,52 +261,77 @@ const App = () => {
   </div>
 </section>
       {/* Products Section - Improved for large screens */}
-      <section className="py-16 px-4 sm:px-8 bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
-        <div className="container mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-8xl">
-          <div className="text-center mb-8 sm:mb-12 animate-on-scroll fade-in-up">
-            <h5 className="text-blue-600 font-medium mb-2 uppercase tracking-wider">Our Solutions</h5>
-            <h2 className="font-nulshock text-3xl sm:text-4xl xl:text-5xl font-bold mb-4 text-gray-800">AMEMS Medical Products</h2>
-            <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
-          </div>
-
-          <p className="text-gray-700 mb-8 leading-relaxed text-base sm:text-lg xl:text-xl max-w-4xl xl:max-w-5xl mx-auto text-center animate-on-scroll fade-in-up">
-            We address the high prevalence of acquired and congenital cardiovascular disorders in the region while tackling
-            other serious health challenges. Our pharmaceutical products are developed with cutting-edge technology and meet
-            the highest international standards for quality and efficacy.
-          </p>
-
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              {productCategories.map((product, index) => (
-                <div 
-                  key={index} 
-                  className="animate-on-scroll fade-in-up bg-white p-4 sm:p-6 xl:p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
-                  style={{ transitionDelay: `${(index * 0.1)}s` }}
-                >
-                  <div className={`${product.color} w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mb-4`}>
-                    <i className={`${product.icon} text-xl sm:text-2xl`}></i>
-                  </div>
-                  <h3 className="font-bold text-lg sm:text-xl xl:text-2xl mb-2 sm:mb-3 text-gray-800">{product.title}</h3>
-                  <p className="text-gray-600 text-sm sm:text-base xl:text-lg">{product.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="relative lg:order-2 animate-on-scroll fade-in-right">
-              <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-lg overflow-hidden">
-                <img
-                  src={med1}
-                  alt="Medical products and pharmaceuticals"
-                  className="w-full rounded-lg relative z-10 object-cover object-center"
-                  style={{ height: "400px", maxHeight: "600px" }}
-                />
-              </div>
-            </div>
-          </div>
-
+      <section className="py-20 px-4 sm:px-8 bg-cover bg-center relative overflow-hidden" style={{ backgroundImage: `url(${background})` }}>
+  {/* Animated background elements */}
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-indigo-900/90 z-0"></div>
+  <div className="absolute top-0 left-0 w-full h-full opacity-30 mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\' fill=\'%23ffffff\' fill-opacity=\'0.2\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")' }}></div>
   
+  <div className="container mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-8xl relative z-10">
+    <div className="text-center mb-12 sm:mb-16 animate-on-scroll fade-in-up">
+      <div className="inline-block py-1 px-3 rounded-full bg-blue-500/20 backdrop-blur-sm mb-3">
+        <h5 className="text-blue-200 font-medium uppercase tracking-widest text-sm">Advanced Solutions</h5>
+      </div>
+      <h2 className="font-nulshock text-4xl sm:text-5xl xl:text-6xl font-bold mb-6 text-white leading-tight">
+        AMEMS <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-200">Medical Products</span>
+      </h2>
+      <div className="w-32 h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full mt-2"></div>
+    </div>
+
+    <p className="text-blue-100 mb-12 leading-relaxed text-lg sm:text-xl xl:text-2xl max-w-4xl xl:max-w-5xl mx-auto text-center animate-on-scroll fade-in-up">
+      We address the high prevalence of cardiovascular disorders while tackling
+      other serious health challenges with <span className="font-semibold text-white">innovative pharmaceutical solutions</span> developed 
+      using cutting-edge technology that meet the highest international standards.
+    </p>
+
+    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+        {productCategories.map((product, index) => (
+          <div 
+            key={index} 
+            className="animate-on-scroll fade-in-up group bg-white/10 backdrop-blur-lg p-6 sm:p-7 xl:p-8 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 border border-white/20 hover:border-blue-300/30 hover:bg-white/15"
+            style={{ transitionDelay: `${(index * 0.1)}s` }}
+          >
+            <div className={`${product.color} w-16 h-16 sm:w-18 sm:h-18 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <i className={`${product.icon} text-2xl sm:text-3xl`}></i>
+            </div>
+            <h3 className="font-bold text-xl sm:text-2xl xl:text-2xl mb-3 sm:mb-4 text-white">{product.title}</h3>
+            <p className="text-blue-100 text-base sm:text-lg">{product.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="relative lg:order-2 animate-on-scroll fade-in-right">
+        <div className="absolute -top-12 -left-12 w-60 h-60 bg-cyan-500/20 rounded-full blur-3xl z-0"></div>
+        <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-blue-500/20 rounded-full blur-2xl z-0"></div>
+        
+        <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 p-2 sm:p-3 rounded-2xl shadow-2xl overflow-hidden group">
+          {/* Animated corner accents */}
+          <div className="absolute top-0 left-0 w-16 h-2 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+          <div className="absolute top-0 left-0 w-2 h-16 bg-gradient-to-b from-cyan-400 to-blue-500"></div>
+          <div className="absolute bottom-0 right-0 w-16 h-2 bg-gradient-to-l from-cyan-400 to-blue-500"></div>
+          <div className="absolute bottom-0 right-0 w-2 h-16 bg-gradient-to-t from-cyan-400 to-blue-500"></div>
+          
+          {/* Main image with fancy effects */}
+          <div className="relative z-10 overflow-hidden rounded-xl shadow-inner">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10"></div>
+            
+            <img
+              src={med1}
+              alt="AMEMS Medical products and pharmaceuticals"
+              className="w-full transition-all  duration-700 group-hover:scale-105 "
+              style={{ height: "450px", maxHeight: "600px" }}
+            />
+            
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent h-1/3 z-20"></div>
+          </div>
+          
+          {/* Interactive label */}
+         
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Customer Service Section - Improved for large screens */}
       <div className="items-center container mx-auto px-4 py-12 sm:py-16 items-center xl:py-24 max-w-7xl xl:max-w-8xl">
