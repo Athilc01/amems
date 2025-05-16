@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import mission from '../../../public/images/missionimg.jpg';
 import vision from '../../../public/images/visionimg.jpg';
 import background from '../../../public/images/background.jpeg';
-import med1 from '../../../public/images/med2.jpeg';
+import med1 from '../../assets/images/med2.jpeg';
 import medical from '../../../public/images/custservice.png';
 import { motion } from "framer-motion";
 

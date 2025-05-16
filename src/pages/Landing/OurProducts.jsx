@@ -1,38 +1,38 @@
 import React, { useEffect, useRef } from 'react';
 import logo from '../../assets/logo/Pharma.png';
 import doctor from '../../../public/images/DocProduct-1.png';
-import med1 from '../../../public/images/Amemlyte.png';
-import med2 from '../../../public/images/AME-FLEX.png';
-import med3 from '../../../public/images/AMEMPROZOLE.png';
-import med4 from '../../../public/images/AMEMRA-1.png';
-import med5 from '../../../public/images/AMEMRA.png';
-import med6 from '../../../public/images/AMEMSGEL.png';
-import med7 from '../../../public/images/AMEOCATE.png';
-import med8 from '../../../public/images/AMEXBIO.png';
-import med9 from '../../../public/images/ALFAMEMS.png';
-import med10 from '../../../public/images/AMOCONOZOLE.png';
-import med11 from '../../../public/images/AMPIAPERX.png';
-import med12 from '../../../public/images/AMPROLIDE-7.5.png';
-import med13 from '../../../public/images/BORTAMEMS.png';
-import med14 from '../../../public/images/BOTOX.png';
-import med15 from '../../../public/images/CEFOMEMS.png';
-import med16 from '../../../public/images/ELECTROCIDE.png';
-import med17 from '../../../public/images/FRUITS_AMEMS.png';
-import med18 from '../../../public/images/GLIUCASMIN.png';
-import med19 from '../../../public/images/GLUCOAMIN.png';
-import med20 from '../../../public/images/HEPAMEMS.png';
-import med21 from '../../../public/images/INVOSMIL.png';
-import med22 from '../../../public/images/LIQUID_IV_US.png';
-import med23 from '../../../public/images/LIQUID_IV_US2.png';
-import med24 from '../../../public/images/LIQUID_IV_US3.png';
-import med25 from '../../../public/images/LIQUID_IV_US4.png';
-import med26 from '../../../public/images/LITHIUM_CARBONATE.png';
-import med27 from '../../../public/images/OLEXIUM.png';
-import med28 from '../../../public/images/OTIAMEMS.png';
-import med29 from '../../../public/images/PAPAVERINE.png';
-import med30 from '../../../public/images/PROPANOLOL.png';
-import med31 from '../../../public/images/RIFAMES.png';
-import med32 from '../../../public/images/VEGGIES.png';
+import med1 from '../../assets/images/Amemlyte.png'
+import med2 from '../../assets/images/AME-FLEX.png';
+import med3 from '../../assets/images/AMEMPROZOLE.png';
+import med4 from '../../assets/images/AMEMRA-1.png';
+import med5 from '../../assets/images/AMEMRA.png';
+import med6 from '../../assets/images/AMEMSGEL.png';
+import med7 from '../../assets/images/AMEOCATE.png';
+import med8 from '../../assets/images/AMEXBIO.png';
+import med9 from '../../assets/images/ALFAMEMS.png';
+import med10 from '../../assets/images/AMOCONOZOLE.png';
+import med11 from '../../assets/images/AMPIAPERX.png';
+import med12 from '../../assets/images/AMPROLIDE-7.5.png';
+import med13 from '../../assets/images/BORTAMEMS.png';
+import med14 from '../../assets/images/BOTOX.png';
+import med15 from '../../assets/images/CEFOMEMS.png';
+import med16 from '../../assets/images/ELECTROCIDE.png';
+import med17 from '../../assets/images/FRUITS_AMEMS.png';
+import med18 from '../../assets/images/GLIUCASMIN.png';
+import med19 from '../../assets/images/GLUCOAMIN.png';
+import med20 from '../../assets/images/HEPAMEMS.png';
+import med21 from '../../assets/images/INVOSMIL.png';
+import med22 from '../../assets/images/LIQUID_IV_US.png';
+import med23 from '../../assets/images/LIQUID_IV_US2.png';
+import med24 from '../../assets/images/LIQUID_IV_US3.png';
+import med25 from '../../assets/images/LIQUID_IV_US4.png';
+import med26 from '../../assets/images/LITHIUM_CARBONATE.png';
+import med27 from '../../assets/images/OLEXIUM.png';
+import med28 from '../../assets/images/OTIAMEMS.png';
+import med29 from '../../assets/images/PAPAVERINE.png';
+import med30 from '../../assets/images/PROPANOLOL.png';
+import med31 from '../../assets/images/RIFAMES.png';
+import med32 from '../../assets/images/VEGGIES.png';
  
 
 import { gsap } from 'gsap';
@@ -193,7 +193,7 @@ const OurProducts = () => {
       category: "Nutrition",
       name: "AMEPROZOLE",
       description: "Health Products",
-      image: med3,
+      image:med3  ,
       rating: 4.5,
   
     },
