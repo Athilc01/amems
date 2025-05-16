@@ -12,7 +12,7 @@ import med8 from '../../assets/images/AMEXBIO.png';
 import med9 from '../../assets/images/ALFAMEMS.png';
 import med10 from '../../assets/images/AMOCONOZOLE.png';
 import med11 from '../../assets/images/AMPIAPERX.png';
-import med12 from '../../assets/images/AMPROLIDE-7.5.png';
+import med12 from '../../assets/images/AMPROLIDE.png';
 import med13 from '../../assets/images/BORTAMEMS.png';
 import med14 from '../../assets/images/BOTOX.png';
 import med15 from '../../assets/images/CEFOMEMS.png';
