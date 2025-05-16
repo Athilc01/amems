@@ -40,7 +40,7 @@ const ContactForm = () => {
         setEmail("");
         setMessage("");
         // Initialize countdown
-        setCountdown(10);
+        setCountdown(3);
       } else {
         // Handle error response
         const errorData = await response.json();
@@ -146,7 +146,6 @@ const ContactForm = () => {
                     </div>
                     <h4 className="text-xl font-bold text-green-800 mb-2">Message Sent Successfully!</h4>
                     <p className="text-green-700 mb-4">Thank you for contacting us. We'll get back to you soon.</p>
-                    <p className="text-sm text-gray-500 mt-2">Form will reset in {countdown} seconds...</p>
                   </div>
                 ) : (
                   <form
