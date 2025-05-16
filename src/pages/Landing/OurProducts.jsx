@@ -12,7 +12,7 @@ import med8 from '../../../public/images/AMEXBIO.png';
 import med9 from '../../../public/images/ALFAMEMS.png';
 import med10 from '../../../public/images/AMOCONOZOLE.png';
 import med11 from '../../../public/images/AMPIAPERX.png';
-import med12 from '../../../public/images/AMPROLIDE 7.5.png';
+import med12 from '../../../public/images/AMPROLIDE-7.5.png';
 import med13 from '../../../public/images/BORTAMEMS.png';
 import med14 from '../../../public/images/BOTOX.png';
 import med15 from '../../../public/images/CEFOMEMS.png';
