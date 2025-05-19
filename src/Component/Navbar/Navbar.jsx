@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaHeadset, FaAngleRight } from "react-icons/fa";
+import { FaBars, FaTimes, FaHeadset } from "react-icons/fa";
 import logo from '../../assets/logo/amems-logo.png';
 import QuoteModal from '../QuoteComponent/QuoteComponent';
 
@@ -9,12 +9,10 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeLink, setActiveLink] = useState("/");
     const location = useLocation();
-    const [quoteModalOpen, setQuoteModalOpen] = useState(false); // State for the quote modal
+    const [quoteModalOpen, setQuoteModalOpen] = useState(false);
     const mobileMenuRef = useRef(null);
     const mobileButtonRef = useRef(null);
-    
 
-    // Detect scroll to add effects on navbar
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
@@ -24,15 +22,12 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Set active link based on current location
     useEffect(() => {
         setActiveLink(location.pathname);
     }, [location]);
 
-    // Handle click outside to close mobile menu
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // Close the menu if click is outside menu and not on the toggle button
             if (
                 isMobileMenuOpen && 
                 mobileMenuRef.current && 
@@ -44,13 +39,11 @@ const Navbar = () => {
             }
         };
 
-        // Add event listener when menu is open
         if (isMobileMenuOpen) {
             document.addEventListener('mousedown', handleClickOutside);
             document.addEventListener('touchstart', handleClickOutside);
         }
         
-        // Cleanup
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('touchstart', handleClickOutside);
@@ -67,7 +60,6 @@ const Navbar = () => {
 
     const openQuoteModal = () => {
         setQuoteModalOpen(true);
-        // Close the mobile menu if it's open
         if (isMobileMenuOpen) setIsMobileMenuOpen(false);
     };
 
@@ -76,19 +68,19 @@ const Navbar = () => {
     };
 
     return (
-        <>
+        <>  
             <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
                 isScrolled 
                     ? 'bg-white shadow-lg py-2' 
                     : 'bg-gradient-to-r from-white/95 to-blue-50/95 backdrop-blur-md py-4'
-            }`}>
+            } w-full overflow-x-hidden`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
-                        <Link to="/" className="group">
-                            <div className="flex-shrink-0 flex items-center space-x-2 transition-transform duration-300 transform group-hover:scale-105">
+                        <Link to="/" className="group flex-shrink-0">
+                            <div className="flex items-center space-x-2 transition-transform duration-300 transform group-hover:scale-105">
                                 <img
-                                    className="h-14 w-auto object-contain"
+                                    className="h-14 max-h-14 w-auto object-contain"
                                     src={logo}
                                     alt="AMEMS Logo"
                                 />
@@ -96,12 +88,12 @@ const Navbar = () => {
                         </Link>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center space-x-10">
+                        <div className="hidden md:flex items-center flex-wrap space-x-4 min-w-0">
                             {navLinks.map((link) => (
                                 <Link 
                                     key={link.name}
                                     to={link.href} 
-                                    className={`relative px-2 py-1 font-medium text-[16px] transition-all duration-300 overflow-hidden group ${
+                                    className={`relative px-2 py-1 font-medium text-[16px] transition-all duration-300 overflow-hidden group min-w-0 ${
                                         activeLink === link.href 
                                             ? 'text-blue-600' 
                                             : 'text-gray-700 hover:text-blue-600'
@@ -119,10 +111,10 @@ const Navbar = () => {
                         </div>
 
                         {/* Right side actions */}
-                        <div className="hidden md:flex items-center space-x-6">
+                        <div className="hidden md:flex items-center space-x-6 min-w-0">
                             <button 
                                 onClick={openQuoteModal}
-                                className="ml-4 px-6 py-2 bg-back hover:bg-indigo-800 text-white font-medium rounded-full text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+                                className="ml-4 px-6 py-2 bg-back hover:bg-indigo-800 text-white font-medium rounded-full text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md min-w-0"
                             >
                                 Get Quote
                             </button>
@@ -150,7 +142,7 @@ const Navbar = () => {
                 <div 
                     ref={mobileMenuRef}
                     className={`md:hidden bg-white rounded-b-2xl shadow-xl overflow-hidden transition-all duration-500 ease-in-out ${
-                        isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                        isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
                     }`}
                 >
                     <div className="px-6 py-4 space-y-2">
@@ -184,7 +176,7 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Render the QuoteModal component with proper props */}
+            {/* Render the QuoteModal component */}
             {quoteModalOpen && (
                 <QuoteModal 
                     isOpen={quoteModalOpen}

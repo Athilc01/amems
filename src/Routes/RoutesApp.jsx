@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../pages/Landing/Home";
 import App from "../pages/Landing/AboutUs";
 import WhatsAppButton from "../Component/WhatsappButton/WhatsappButton";
@@ -13,31 +13,25 @@ import QuoteModal from "../Component/QuoteComponent/QuoteComponent";
 import ScrollToTop from "../Component/ScrollToTop/ScrollToTop";
 
 const RoutesApp = () => {
+  const location = useLocation();
+
   return (
     <>
-       <Navbar/>
-       <ScrollToTop/>
-      <Routes> 
- 
-        
-        {/* <Route path="/" element={<Home />} /> */}
-         <Route path="/" element={<Home />} />
-        <Route path="/AboutUs" element={<App />} />
-        <Route path="/OurProducts" element={<OurProducts />} />
-        <Route path="/Reviews" element={<Reviews />} />
-        <Route path="/Contacts" element={<Contacts />} />
-        <Route path="/QuoteModal" element={<QuoteModal />} />
-        
-
-        
-
-
-        
-      </Routes>
-      <Footer/>
-      <TopButton/>
-      <WhatsAppButton/>
-
+      <div>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AboutUs" element={<App />} />
+          <Route path="/OurProducts" element={<OurProducts />} />
+          <Route path="/Reviews" element={<Reviews />} />
+          <Route path="/Contacts" element={<Contacts />} />
+          <Route path="/QuoteModal" element={<QuoteModal />} />
+        </Routes>
+        <Footer />
+        <TopButton />
+        <WhatsAppButton />
+      </div>
     </>
   );
 };
