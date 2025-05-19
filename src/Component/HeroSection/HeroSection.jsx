@@ -181,10 +181,10 @@ export default function HealthcareBanner() {
               ref={doctorRef}
               className="absolute left-1/2 transform -translate-x-1/2"
               style={{
-                top: '165%',
-                transform: 'translate(-50%, -50%)',
+                top: '70px',
+
                 zIndex: 20,
-                height: 'auto',
+                height: '700px',
                 width: '100%',
                 maxWidth: '400px',
                 display: 'flex',
