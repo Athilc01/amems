@@ -255,9 +255,9 @@ const MedicalBanner = () => {
 
               <p
                 ref={paragraphRef}
-                className="p-3 text-justify text-lg leading-relaxed opacity-0"
+                className=" capitalize p-4 text-justify text-lg leading-relaxed opacity-0"
               >
-                We address the high prevalence of acquired and congenital cardiovascular disorders
+                We Address the high prevalence of acquired and congenital cardiovascular disorders
                 in the region, as well as other serious health difficulties affecting countries in
                 the region. Our team is dedicated to delivering accessible, world-class medical care
                 with compassion and innovation.

@@ -88,12 +88,12 @@ const Navbar = () => {
                         </Link>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center flex-wrap space-x-4 min-w-0">
+                        <div className="hidden  md:flex items-center flex-wrap space-x-4 min-w-0">
                             {navLinks.map((link) => (
                                 <Link 
                                     key={link.name}
                                     to={link.href} 
-                                    className={`relative px-2 py-1 font-medium text-[16px] transition-all duration-300 overflow-hidden group min-w-0 ${
+                                    className={`relative px-2 py-1 font-bold text-[18px] transition-all duration-300 overflow-hidden group min-w-0 ${
                                         activeLink === link.href 
                                             ? 'text-blue-600' 
                                             : 'text-gray-700 hover:text-blue-600'

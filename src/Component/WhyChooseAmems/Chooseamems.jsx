@@ -158,7 +158,7 @@ const Chooseamems = () => {
               </h2>
               <p
                 ref={descriptionRef}
-                className="mt-4 max-w-2xl text-xl text-white mx-auto will-change-opacity"
+                className="capitalize mt-4 max-w-2xl text-xl text-white mx-auto will-change-opacity"
               >
                 Discover why we are the best choice for your healthcare needs
               </p>
