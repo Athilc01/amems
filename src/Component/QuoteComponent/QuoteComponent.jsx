@@ -104,7 +104,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
                 </button>
 
                 {/* Header */}
-                <div className="bg-back py-6 px-6">
+                <div className="bg-indigo-800 py-6 px-6">
                   <h2 className="text-2xl font-bold text-white pt-2">Get a Quote</h2>
                   <p className="text-red-100 text-sm mt-1">Tell us about your project, and we'll get back to you within 24 hours</p>
                 </div>
@@ -164,7 +164,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className={`w-full px-6 py-3 bg-back hover:bg-green-400 text-white font-medium rounded-md text-sm transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                          className={`w-full px-6 py-3 bg-indigo-800 hover:bg-green-400 text-white font-medium rounded-md text-sm transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                         >
                           {isSubmitting ? (
                             <div className="flex items-center justify-center">

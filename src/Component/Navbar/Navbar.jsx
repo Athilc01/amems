@@ -114,7 +114,7 @@ const Navbar = () => {
                         <div className="hidden md:flex items-center space-x-6 min-w-0">
                             <button 
                                 onClick={openQuoteModal}
-                                className="ml-4 px-6 py-2 bg-back hover:bg-indigo-800 text-white font-medium rounded-full text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md min-w-0"
+                                className="ml-4 px-6 py-2 bg-indigo-800 hover: text-white font-medium rounded-full text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-md min-w-0"
                             >
                                 Get Quote
                             </button>
